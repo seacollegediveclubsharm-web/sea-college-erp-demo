@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sea College Dive Club — Unified Mobile & Cloud ERP Demo</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { background: #F6F4EF; color: #0B1D2C; font-family: 'Inter', system-ui, sans-serif; }
+    html[dir="rtl"] body { font-family: 'Cairo', system-ui, sans-serif; }
+  </style>
+</head>
+<body class="min-h-screen antialiased pb-12">
+  <!-- Branded Hero Header -->
+  <header class="bg-gradient-to-r from-[#0B1D2C] via-[#102C44] to-[#0A84A8] text-white shadow-lg">
+    <div class="max-w-6xl mx-auto px-4 py-5 flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-3.5">
+        <img src="./assets/logo.jpg" alt="Sea College" class="w-12 h-12 rounded-xl object-cover border border-white/30 shadow" />
+        <div>
+          <h1 id="hdr-title" class="font-extrabold text-lg md:text-xl leading-tight">Sea College Dive Club — Unified Mobile & Cloud ERP</h1>
+          <p id="hdr-sub" class="text-xs md:text-sm text-sky-200">Interactive Role-by-Role Demo & Workflow Video Guide (Sharm El Sheikh)</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-2 flex-wrap">
+        <span class="text-xs px-3 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-200 font-semibold">● Live Interactive Demo</span>
+        <button onclick="toggleLang()" id="lang-btn" class="text-xs md:text-sm px-4 py-2 rounded-xl bg-[#E05A36] hover:bg-[#c94b29] text-white font-bold shadow cursor-pointer transition">
+          العربية (RTL)
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 mt-6 space-y-6">
+    <!-- Video Walkthrough Section (Arabic & English Switcher) -->
+    <section class="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 md:p-6 space-y-4">
+      <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-3">
+        <div>
+          <h2 id="vid-heading" class="font-extrabold text-base md:text-lg text-[#0B1D2C]">🎬 Watch How the System Works & Each Department Role</h2>
+          <p id="vid-sub" class="text-xs md:text-sm text-slate-500">Step-by-step walkthrough from QR Booking → Boat Dispatch → Jetty Gate → Multi-Currency Safe → Automated Accounting & CFO</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="setVideo('ar')" id="btn-vid-ar" class="px-3.5 py-2 rounded-xl text-xs md:text-sm font-bold border transition cursor-pointer">
+            🇪🇬 الفيديو بالعربية
+          </button>
+          <button onclick="setVideo('en')" id="btn-vid-en" class="px-3.5 py-2 rounded-xl text-xs md:text-sm font-bold border transition cursor-pointer">
+            🇬🇧 English Video
+          </button>
+        </div>
+      </div>
+      <div class="rounded-xl overflow-hidden bg-[#0B1D2C] shadow-inner aspect-video max-h-[480px] mx-auto w-full">
+        <video id="explainer-video" controls preload="metadata" class="w-full h-full object-contain">
+          <source id="video-src" src="./videos/sea-college-erp-english.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </section>
+
+    <!-- Toast Feedback -->
+    <div id="toast" class="hidden rounded-xl border-2 bg-white p-3.5 text-xs md:text-sm font-semibold shadow-sm flex items-center justify-between gap-3">
+      <span id="toast-msg"></span>
+      <button onclick="document.getElementById('toast').classList.add('hidden')" class="underline text-slate-600 cursor-pointer">OK</button>
+    </div>
+
+    <!-- 6-Role Selector Tabs -->
+    <section class="space-y-3">
+      <div class="flex items-center justify-between">
+        <h2 id="sim-heading" class="font-extrabold text-base md:text-lg text-[#0B1D2C]">📱 Try Each Role Live on Mobile or Desktop</h2>
+        <span class="text-xs font-mono text-slate-500">1€ = 54 EGP · 1$ = 50 EGP · 1£ = 63 EGP</span>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5" id="nav-tabs"></div>
+
+      <!-- Role Explanation Banner -->
+      <div id="role-banner" class="bg-[#0B1D2C] text-white rounded-2xl p-4 flex flex-wrap items-center justify-between gap-3 shadow-sm"></div>
+
+      <!-- Interactive Department Screen -->
+      <div id="view-container"></div>
+    </section>
+  </main>
+
+  <script>
+    const I18N = {
+      en: {
+        title: "Sea College Dive Club — Unified Mobile & Cloud ERP",
+        sub: "Interactive Role-by-Role Demo & Workflow Video Guide (Sharm El Sheikh)",
+        langBtn: "العربية (RTL)",
+        vidHeading: "🎬 Watch How the System Works & Each Department Role",
+        vidSub: "Step-by-step walkthrough from QR Booking → Boat Dispatch → Jetty Gate → Multi-Currency Safe → Automated Accounting & CFO",
+        simHeading: "📱 Try Each Role Live on Mobile or Desktop",
+        tabs: [
+          { id: "sales", label: "1. Sales & QR", sub: "Hotel / Web / B2B", who: "Hotel Desk Reps, Lara (WhatsApp/Meta), Website & B2B Agencies", how: "Issues unique sequential QR vouchers in 15s, auto-fills hotel pickup time, logs deposit & REST due, and blocks over-limit B2B agency credit." },
+          { id: "ops", label: "2. Operations", sub: "Boats & Transfers", who: "Operations Manager, Coastguard Officer & Transfer Drivers", how: "Assigns yachts & speedboats, enforces Max 4 Divers Per PADI Guide, syncs Coastguard passports, and auto-accrues external bus transfer fees." },
+          { id: "jetty", label: "3. Travco Jetty", sub: "QR Gate & Gear", who: "Jetty Supervisor, Boat Captains, Dive Guides, Gear Room & Photo", how: "Scans guest QR before boarding (prevents unpaid REST leakage), adds Extra Intro / Photo upsells, scans S.C. gear tags, and triggers Ads ROAS." },
+          { id: "safe", label: "4. Cashbox & FX", sub: "EGP / $ / € / £", who: "Branch Cashiers (Cyrene & Jetty) & Main Treasury", how: "Tracks live 4-currency drawers, imprest custodies, VISA POS (-2.5% MDR), and posts clean double-entry FX swaps instead of negative cash rows." },
+          { id: "gl", label: "5. Accounting", sub: "Nadia GL & AR/AP", who: "Chief Accountant (Nadia) & HR Payroll Controller", how: "Receives 100% automated balanced journal entries (0.00 EGP Trial Balance gap), instant B2B/supplier statements, and staff commissions." },
+          { id: "cfo", label: "6. CFO & Fleet", sub: "Tarek & Partners", who: "CFO (Tarek), Owners, Yacht Partners (24-Qirat) & Marketing (Hossam)", how: "Monitors live P&L by branch & boat, 24-qirat partner shares, capitalized shipyard drydock (Azaq), and closed-loop Google/Meta ROAS." }
+        ]
+      },
+      ar: {
+        title: "سي كولدج دايف كلوب — ديمو التطبيق والنظام المحاسبي الموحد",
+        sub: "شرح بالفيديو وتجربة حية لدور كل قسم وموظف في المنظومة الجديدة",
+        langBtn: "English (LTR)",
+        vidHeading: "🎬 شاهد بالفيديو كيف يعمل النظام ودور كل قسم بالتفصيل",
+        vidSub: "شرح عملي من إصدار فوتشر QR ← توزيع المراكب والترانسفير ← بوابة السقالة ← الخزينة والعملات ← القيود الآلية والإدارة المالية",
+        simHeading: "📱 جرّب شاشة كل موظف وقسم بنفسك الآن",
+        tabs: [
+          { id: "sales", label: "١. المبيعات والفوتشر", sub: "الفنادق / أونلاين / شركات", who: "مندوبو الفنادق · واتساب لارا · الموقع الإلكتروني · الشركات السياحية", how: "إصدار فوتشر رقمي متسلسل بكود QR في ١٥ ثانية، تحديد موعد التحرك تلقائياً، تسجيل العربون والباقي، ومنع تجاوز حد ائتمان الشركات السياحية." },
+          { id: "ops", label: "٢. التشغيل والمراكب", sub: "توزيع المراكب والباصات", who: "مدير التشغيل · مسؤول التصاريح · سائقو الهاي اس والترانسفير", how: "توزيع الضيوف على المراكب والسبيد بوت، تطبيق قاعدة بحد أقصى ٤ غطاسين لكل مرشد بادي، وإثبات مستحقات باصات الترانسفير تلقائياً." },
+          { id: "jetty", label: "٣. بوابة السقالة", sub: "مسح QR والباقي والعدة", who: "مشرف سقالة ترافكو · الكباتن والمرشدون · مسؤول العدة · التصوير", how: "مسح كود QR قبل الصعود لتحصيل أي مبلغ متبقٍ، إضافة اكسترا انترو أو تصوير، تسليم العدة بالرقم المسلسل، وإرسال تأكيد الإيراد للحملات الإعلانية." },
+          { id: "safe", label: "٤. الخزينة والعملات", sub: "مصري / $ / € / £ / فيزا", who: "أمناء الخزينة (سيرين والسقالة) والخزينة الرئيسية", how: "متابعة حية لأرصدة العملات الأربع والعهد والفيزا، وتنفيذ قيد تحويل عملة مزدوج سليم بدلاً من تسجيل إيراد سالب." },
+          { id: "gl", label: "٥. الحسابات (نادية)", sub: "اليومية والعملاء والموردين", who: "رئيسة الحسابات (نادية) ومسؤول شؤون العاملين والمرتبات", how: "ميزان مراجعة متوازن ١٠٠٪ تلقائياً (صفر فروق غير مفسرة)، وكشوف فورية للعملاء والموردين، وربط الحضور والسلف بعمولات المندوبين والمدربين." },
+          { id: "cfo", label: "٦. المالية والمراكب", sub: "طارق · الأرباح والقيراط", who: "المدير المالي (طارق) · الشركاء وحصص القيراط · مدير التسويق (حسام)", how: "متابعة صافي الربح لكل فرع ومركب لحظياً، وحساب حصص القيراط وعمرة المراكب الرأسمالية (الأزق)، والعائد الفعلي للإعلانات." }
+        ]
+      }
+    };
+
+    const state = {
+      fx: { EGP: 1, EUR: 54, USD: 50, GBP: 63 },
+      products: [
+        { code: "WHITE_ISLAND_SNK", name_en: "Ras Mohammed & White Island Boat (Snorkel)", name_ar: "رحلة مركب رأس محمد والجزيرة البيضاء", category: "SNORKEL", price_eur: 55, direct_cogs_egp: 420, revenue_account_code: "4100", cogs_account_code: "5100" },
+        { code: "BOAT_INTRO_1", name_en: "Boat Trip + 1 Guided Intro Dive", name_ar: "رحلة مركب + غطسة انترو", category: "INTRO", price_eur: 70, direct_cogs_egp: 580, revenue_account_code: "4110", cogs_account_code: "5100" },
+        { code: "CERT_2_DIVES", name_en: "Certified Diver 2-Dive Boat Package", name_ar: "باقة غطاس معتمد (٢ غطسة)", category: "DIVING", price_eur: 85, direct_cogs_egp: 620, revenue_account_code: "4120", cogs_account_code: "5100" },
+        { code: "PADI_OWD", name_en: "PADI Open Water Diver Course", name_ar: "كورس بادي مياه مفتوحة OWD", category: "COURSE", price_eur: 400, direct_cogs_egp: 3800, revenue_account_code: "4130", cogs_account_code: "5100" },
+        { code: "SPEEDBOAT_2H", name_en: "Private Speedboat 2h Tiran", name_ar: "سبيد خاص ساعتين تيران", category: "SPEEDBOAT", price_eur: 150, direct_cogs_egp: 1250, revenue_account_code: "4140", cogs_account_code: "5100" },
+        { code: "SAFARI_BAKAR", name_en: "Desert Safari Quad + Dinner", name_ar: "سفاري بيتش باجي وعشاء بدوي", category: "EXCURSION", price_eur: 35, direct_cogs_egp: 1100, revenue_account_code: "4160", cogs_account_code: "5150" }
+      ],
+      hotels: [
+        { code: "AL_MONTAZAH_RESORT", name_en: "Al Montazah Beachfront Resort", default_pickup_time: "07:55" },
+        { code: "SHARKS_BAY_HOTEL", name_en: "Sharks Bay Grand Resort", default_pickup_time: "07:50" },
+        { code: "NAAMA_BAY_RESORT", name_en: "Naama Bay Marina Hotel", default_pickup_time: "07:35" },
+        { code: "HADABA_CLIFF_HOTEL", name_en: "Hadaba Cliff Resort", default_pickup_time: "07:25" },
+        { code: "NABQ_LAGOON_RESORT", name_en: "Nabq Lagoon Resort", default_pickup_time: "07:35" }
+      ],
+      vessels: [
+        { code: "YACHT_OCEANO", name_en: "M/Y Oceano", name_ar: "مركب أوشينو", partner_share_note: "Partner Pool 18q (75%) / Club Share 6q (25%)", monthly_fixed_rent_egp: 280000, drydock_egp: 1200000 },
+        { code: "YACHT_OMAR4", name_en: "M/Y Omar 4", name_ar: "مركب عمر 4", partner_share_note: "Partner Pool 12q (50%) / Club Share 12q (50%)", monthly_fixed_rent_egp: 350000, drydock_egp: 950000 },
+        { code: "YACHT_NIZAR", name_en: "M/Y Nizar", name_ar: "مركب نزار", partner_share_note: "Partner Share 6q (25%) / Club Share 18q (75%)", monthly_fixed_rent_egp: 250000, drydock_egp: 0 },
+        { code: "SPEEDBOAT_1", name_en: "Speedboat RIB 1", name_ar: "سبيد بوت ١", partner_share_note: "Club Owned Speedboat (24q)", monthly_fixed_rent_egp: 150000, drydock_egp: 0 }
+      ],
+      equipment: [
+        { sc_tag: "SC-BCD-001", brand_model: "TUSA Imprex Pro XL", status: "AVAILABLE" },
+        { sc_tag: "SC-BCD-002", brand_model: "Scubapro Glide M", status: "AVAILABLE" },
+        { sc_tag: "SC-BCD-020", brand_model: "Seac Ego XS", status: "AVAILABLE" },
+        { sc_tag: "SC-REG-011", brand_model: "Apeks ATX40 Reg", status: "AVAILABLE" }
+      ],
+      counterparties: [
+        { id: 1, code: "AGENCY_ALPHA", name_en: "Demo Tour Agency A (Over Limit Test)", name_ar: "شركة سياحة أ (تجربة تجاوز الحد)", party_type: "AGENCY_AR", credit_limit_egp: 200000, current_balance_egp: 215000 },
+        { id: 2, code: "AGENCY_BETA", name_en: "Demo Tour Agency B (Active Credit)", name_ar: "شركة سياحة ب (ائتمان متاح)", party_type: "AGENCY_AR", credit_limit_egp: 250000, current_balance_egp: 85000 },
+        { id: 3, code: "SUPPLIER_SAFARI", name_en: "Desert Safari Supplier", name_ar: "مورد رحلات السفاري", party_type: "SUPPLIER_AP", credit_limit_egp: 0, current_balance_egp: -42000 },
+        { id: 4, code: "SUPPLIER_BUS", name_en: "External Bus Transfer Fleet", name_ar: "مورد باصات الترانسفير", party_type: "SUPPLIER_AP", credit_limit_egp: 0, current_balance_egp: -18500 }
+      ],
+      safes: [
+        { code: "SAFE_CENTER", name_en: "Main Center Cashbox", name_ar: "خزينة المركز الرئيسية", bal_egp: 185000, bal_usd: 4500, bal_eur: 2200, bal_gbp: 500 },
+        { code: "SAFE_JETTY", name_en: "Travco Jetty Cashbox", name_ar: "خزينة السقالة", bal_egp: 95000, bal_usd: 1800, bal_eur: 1400, bal_gbp: 200 },
+        { code: "CUSTODY_OPS", name_en: "Imprest Custodies (Boats & Vans)", name_ar: "عهد المراكب والباصات", bal_egp: 8000, bal_usd: 0, bal_eur: 0, bal_gbp: 50 },
+        { code: "POS_VISA", name_en: "Card POS Terminal Batch", name_ar: "ماكينة الفيزا POS", bal_egp: 42500, bal_usd: 0, bal_eur: 0, bal_gbp: 0 }
+      ],
+      vouchers: [
+        { voucher_no: "VO-2026-2003", qr_token: "SCQR-9F31B2", trip_date: "2026-11-22", channel: "HOTEL_DESK", sales_rep: "REP_1", guest_name: "Alexei & Anna (Demo)", nationality: "RUSSIA", hotel_code: "HADABA_CLIFF_HOTEL", room_no: "1205", pickup_time: "07:25", adults: 2, children: 1, product_code: "WHITE_ISLAND_SNK", total_eur: 137.5, total_egp: 7425, paid_egp_equiv: 5000, rest_currency: "USD", rest_amount: 48.5, rest_egp_equiv: 2425, payment_status: "OPEN_REST", boarding_status: "BOOKED", vessel_code: null, dive_guide: null, transfer_provider: null, gclid: "", oct_synced: 0 },
+        { voucher_no: "VO-2026-2002", qr_token: "SCQR-8C74E1", trip_date: "2026-11-22", channel: "WEBSITE_ONLINE", sales_rep: "LARA_AI", guest_name: "Chen Wei Dive Group (Demo)", nationality: "CHINA", hotel_code: "SHARKS_BAY_HOTEL", room_no: "408", pickup_time: "07:50", adults: 3, children: 0, product_code: "CERT_2_DIVES", total_eur: 255, total_egp: 13770, paid_egp_equiv: 13770, rest_currency: "EUR", rest_amount: 0, rest_egp_equiv: 0, payment_status: "PAID", boarding_status: "DISPATCHED", vessel_code: "YACHT_OCEANO", dive_guide: "GUIDE_1 (PADI)", transfer_provider: "CLUB_HIACE", gclid: "GCLID_DEMO_ROAS", oct_synced: 0 },
+        { voucher_no: "VO-2026-2001", qr_token: "SCQR-4A12D8", trip_date: "2026-11-22", channel: "HOTEL_DESK", sales_rep: "REP_2", guest_name: "Marco & Giulia Rossi (Demo)", nationality: "ITALY", hotel_code: "AL_MONTAZAH_RESORT", room_no: "311", pickup_time: "07:55", adults: 2, children: 0, product_code: "BOAT_INTRO_1", total_eur: 140, total_egp: 7560, paid_egp_equiv: 2160, rest_currency: "EUR", rest_amount: 100, rest_egp_equiv: 5400, payment_status: "OPEN_REST", boarding_status: "DISPATCHED", vessel_code: "YACHT_OMAR4", dive_guide: "GUIDE_2 (PADI)", transfer_provider: "CLUB_HIACE", gclid: "", oct_synced: 0 }
+      ],
+      trial_balance: [
+        { code: "1101", name_en: "Cashbox — Main Center", name_ar: "خزينة المركز الرئيسية", debit_egp: 560300, credit_egp: 0 },
+        { code: "1102", name_en: "Cashbox — Travco Jetty", name_ar: "خزينة السقالة", debit_egp: 273200, credit_egp: 0 },
+        { code: "1110", name_en: "Imprest Custodies", name_ar: "العهد النقدية", debit_egp: 11150, credit_egp: 0 },
+        { code: "1210", name_en: "Card POS Settlements", name_ar: "تسويات الفيزا", debit_egp: 42500, credit_egp: 0 },
+        { code: "1300", name_en: "Accounts Receivable — B2B Agencies", name_ar: "ذمم الشركات السياحية", debit_egp: 300000, credit_egp: 0 },
+        { code: "1330", name_en: "Partner Drydock Receivable (Qirat Share)", name_ar: "مستحق الشركاء — حصة عمرة الأزق", debit_egp: 1375000, credit_egp: 0 },
+        { code: "1530", name_en: "Capitalized Vessel Drydock (Club Share)", name_ar: "أصول رأسمالية — عمرة المراكب", debit_egp: 775000, credit_egp: 0 },
+        { code: "2100", name_en: "Accounts Payable — Excursion Suppliers", name_ar: "موردو الرحلات الخارجية", debit_egp: 0, credit_egp: 42000 },
+        { code: "2110", name_en: "Accounts Payable — Transfers", name_ar: "موردو الترانسفير", debit_egp: 0, credit_egp: 18500 },
+        { code: "2150", name_en: "Unearned Customer Voucher Deposits", name_ar: "عربون فوتشرات قيد التنفيذ", debit_egp: 0, credit_egp: 20930 },
+        { code: "3100", name_en: "Partner Capital & Retained Equity", name_ar: "رأس المال وجاري الشركاء", debit_egp: 0, credit_egp: 3255720 },
+        { code: "4100", name_en: "Snorkeling Boat Revenue", name_ar: "إيراد رحلات السنوركل", debit_egp: 0, credit_egp: 0 },
+        { code: "4110", name_en: "Intro & Extra Intro Revenue", name_ar: "إيراد الانترو واكسترا انترو", debit_egp: 0, credit_egp: 0 },
+        { code: "4120", name_en: "Certified Diving Revenue", name_ar: "إيراد الغطس المعتمد", debit_egp: 0, credit_egp: 0 },
+        { code: "4130", name_en: "PADI Courses Revenue", name_ar: "إيراد كورسات بادي", debit_egp: 0, credit_egp: 0 },
+        { code: "4140", name_en: "Speedboat Revenue", name_ar: "إيراد السبيد بوت", debit_egp: 0, credit_egp: 0 },
+        { code: "4160", name_en: "Resold Excursions Revenue", name_ar: "إيراد الرحلات الخارجية", debit_egp: 0, credit_egp: 0 },
+        { code: "4180", name_en: "Jetty Photography Revenue", name_ar: "إيراد التصوير", debit_egp: 0, credit_egp: 0 },
+        { code: "5100", name_en: "Marine Park & Jetty Permits COGS", name_ar: "تكلفة المحمية وتصاريح السقالة", debit_egp: 0, credit_egp: 0 },
+        { code: "5150", name_en: "Excursion Supplier COGS", name_ar: "تكلفة موردي الرحلات", debit_egp: 0, credit_egp: 0 },
+        { code: "5160", name_en: "Guest Transfer COGS", name_ar: "تكلفة الترانسفير", debit_egp: 0, credit_egp: 0 },
+        { code: "6180", name_en: "POS Card Bank MDR Fees (2.5%)", name_ar: "عمولة البنك على الفيزا ٢.٥٪", debit_egp: 0, credit_egp: 0 },
+        { code: "7100", name_en: "FX Valuation Gain / Loss", name_ar: "فروق تقييم العملة", debit_egp: 0, credit_egp: 0 }
+      ]
+    };
+
+    let lang = "en";
+    let videoLang = "en";
+    let activeTab = "sales";
+
+    const fmt = (n) => Math.round(Number(n || 0)).toLocaleString("en-US");
+    const tr = (en, ar) => (lang === "ar" ? ar : en);
+
+    function showToast(msg, isError = false) {
+      const el = document.getElementById("toast");
+      el.classList.remove("hidden");
+      el.className = `rounded-xl border-2 p-3.5 text-xs md:text-sm font-semibold shadow-sm flex items-center justify-between gap-3 ${isError ? "bg-red-50 border-red-400 text-red-900" : "bg-emerald-50 border-emerald-500 text-emerald-900"}`;
+      document.getElementById("toast-msg").textContent = msg;
+    }
+
+    function setVideo(vlang) {
+      videoLang = vlang;
+      const vid = document.getElementById("explainer-video");
+      const src = document.getElementById("video-src");
+      src.src = vlang === "ar" ? "./videos/sea-college-erp-arabic.mp4" : "./videos/sea-college-erp-english.mp4";
+      vid.load();
+      updateVideoButtons();
+    }
+
+    function updateVideoButtons() {
+      const bAr = document.getElementById("btn-vid-ar");
+      const bEn = document.getElementById("btn-vid-en");
+      bAr.className = `px-3.5 py-2 rounded-xl text-xs md:text-sm font-bold border transition cursor-pointer ${videoLang === "ar" ? "bg-[#0A84A8] text-white border-[#0A84A8]" : "bg-slate-50 text-slate-700 border-slate-300"}`;
+      bEn.className = `px-3.5 py-2 rounded-xl text-xs md:text-sm font-bold border transition cursor-pointer ${videoLang === "en" ? "bg-[#0A84A8] text-white border-[#0A84A8]" : "bg-slate-50 text-slate-700 border-slate-300"}`;
+    }
+
+    function toggleLang() {
+      lang = lang === "en" ? "ar" : "en";
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+      setVideo(lang);
+      render();
+    }
+
+    function addTb(code, dr, cr) {
+      let row = state.trial_balance.find(r => r.code === code);
+      if (row) { row.debit_egp += dr; row.credit_egp += cr; }
+    }
+
+    function submitVoucher(e) {
+      e.preventDefault();
+      const f = e.target;
+      const channel = f.channel.value;
+      const agency_id = f.agency_id.value ? Number(f.agency_id.value) : null;
+      const prod = state.products.find(p => p.code === f.product_code.value);
+      const hotel = state.hotels.find(h => h.code === f.hotel_code.value);
+      const adults = Number(f.adults.value);
+      const children = Number(f.children.value);
+      const billable = prod.category === "SPEEDBOAT" ? 1 : adults + 0.5 * children;
+      const total_eur = Math.round(prod.price_eur * billable * 100) / 100;
+      const total_egp = Math.round(total_eur * state.fx.EUR);
+      const paid_currency = f.paid_currency.value;
+      const paid_amount = Number(f.paid_amount.value);
+      const paid_egp = Math.round(paid_amount * state.fx[paid_currency]);
+
+      if (channel === "AGENCY_B2B" && agency_id) {
+        const ag = state.counterparties.find(a => a.id === agency_id);
+        if (ag.credit_limit_egp > 0 && ag.current_balance_egp + total_egp > ag.credit_limit_egp) {
+          return showToast(tr(
+            `CREDIT LIMIT BLOCK: ${ag.name_en} balance is ${fmt(ag.current_balance_egp)} EGP (Limit ${fmt(ag.credit_limit_egp)} EGP). Collect cash or request CFO approval!`,
+            `إيقاف ائتماني آلي: رصيد ${ag.name_ar} الحالي ${fmt(ag.current_balance_egp)} ج.م يتجاوز الحد المسموح (${fmt(ag.credit_limit_egp)} ج.م)!`
+          ), true);
+        }
+        ag.current_balance_egp += total_egp;
+        addTb("1300", total_egp, 0); addTb("2150", 0, total_egp);
+      } else if (paid_egp > 0) {
+        if (f.payment_method.value === "VISA") {
+          const mdr = Math.round(paid_egp * 0.025);
+          state.safes.find(s => s.code === "POS_VISA").bal_egp += (paid_egp - mdr);
+          addTb("1210", paid_egp - mdr, 0); addTb("6180", mdr, 0); addTb("2150", 0, paid_egp);
+        } else {
+          state.safes.find(s => s.code === "SAFE_CENTER")["bal_" + paid_currency.toLowerCase()] += paid_amount;
+          addTb("1101", paid_egp, 0); addTb("2150", 0, paid_egp);
+        }
+      }
+
+      const vo_no = `VO-2026-${2001 + state.vouchers.length}`;
+      const rest_egp = channel === "AGENCY_B2B" ? total_egp : Math.max(0, total_egp - paid_egp);
+      const rest_amt = Math.round((rest_egp / state.fx[paid_currency]) * 100) / 100;
+      state.vouchers.unshift({
+        voucher_no: vo_no, qr_token: "SCQR-" + Math.random().toString(16).slice(2, 8).toUpperCase(),
+        trip_date: f.trip_date.value, channel, sales_rep: f.sales_rep.value, guest_name: f.guest_name.value,
+        nationality: f.nationality.value, hotel_code: hotel.code, room_no: f.room_no.value, pickup_time: hotel.default_pickup_time,
+        adults, children, product_code: prod.code, total_eur, total_egp, paid_egp_equiv: paid_egp,
+        rest_currency: paid_currency, rest_amount: rest_amt, rest_egp_equiv: rest_egp,
+        payment_status: channel === "AGENCY_B2B" ? "AGENCY_CREDIT" : (rest_egp <= 1 ? "PAID" : "OPEN_REST"),
+        boarding_status: "BOOKED", vessel_code: null, dive_guide: null
+      });
+      showToast(tr(
+        `✓ Digital Voucher ${vo_no} created! Total €${total_eur} · REST due at Jetty: ${rest_amt} ${paid_currency} · GL Balanced!`,
+        `✓ تم إصدار الفوتشر الرقمي ${vo_no} وترحيل القيد للخزينة! المتبقي للتحصيل بالسقالة: ${rest_amt} ${paid_currency}`
+      ));
+      render();
+    }
+
+    function dispatchVoucher(vo_no) {
+      const vessel_code = document.getElementById(`ves-${vo_no}`).value;
+      const dive_guide = document.getElementById(`gde-${vo_no}`).value;
+      const transfer_provider = document.getElementById(`trf-${vo_no}`).value;
+      const v = state.vouchers.find(x => x.voucher_no === vo_no);
+      const prod = state.products.find(p => p.code === v.product_code);
+      if (prod.category === "DIVING" || prod.category === "COURSE") {
+        const cur = state.vouchers.filter(x => x.trip_date === v.trip_date && x.vessel_code === vessel_code && x.dive_guide === dive_guide && x.voucher_no !== vo_no).reduce((s, x) => s + x.adults, 0);
+        if (cur + v.adults > 4) {
+          return showToast(tr(
+            `SAFETY RULE BLOCK: ${dive_guide} already has ${cur} divers on ${vessel_code}. Max 4 Divers Per PADI Guide!`,
+            `تنبيه معايير الأمان: المرشد ${dive_guide} معه بالفعل ${cur} غطاسين! الحد الأقصى ٤ غطاسين لكل مرشد بادي.`
+          ), true);
+        }
+      }
+      v.vessel_code = vessel_code; v.dive_guide = dive_guide; v.transfer_provider = transfer_provider; v.boarding_status = "DISPATCHED";
+      if (transfer_provider === "EXTERNAL_BUS") {
+        addTb("5160", 650, 0); addTb("2110", 0, 650);
+        state.counterparties.find(c => c.code === "SUPPLIER_BUS").current_balance_egp -= 650;
+      }
+      showToast(tr(`✓ Dispatched ${vo_no} onto ${vessel_code} (${dive_guide})`, `✓ تم تسكين الفوتشر ${vo_no} على ${vessel_code} بنجاح`));
+      render();
+    }
+
+    function boardJetty(vo_no) {
+      const extra_intro = Number(document.getElementById(`exi-${vo_no}`)?.value || 0);
+      const photo_pkg = Number(document.getElementById(`pho-${vo_no}`)?.value || 0);
+      const gear_tag = document.getElementById(`gear-${vo_no}`)?.value || "";
+      const v = state.vouchers.find(x => x.voucher_no === vo_no);
+      const prod = state.products.find(p => p.code === v.product_code);
+
+      if (v.payment_status === "OPEN_REST" && v.rest_egp_equiv > 0) {
+        state.safes.find(s => s.code === "SAFE_JETTY")["bal_" + v.rest_currency.toLowerCase()] += v.rest_amount;
+        addTb("1102", v.rest_egp_equiv, 0);
+        if (v.paid_egp_equiv > 0) addTb("2150", v.paid_egp_equiv, 0);
+        addTb(prod.revenue_account_code, 0, v.paid_egp_equiv + v.rest_egp_equiv);
+      } else {
+        addTb("2150", v.total_egp, 0); addTb(prod.revenue_account_code, 0, v.total_egp);
+      }
+      const upEur = extra_intro * 35 + photo_pkg * 30;
+      if (upEur > 0) {
+        state.safes.find(s => s.code === "SAFE_JETTY").bal_eur += upEur;
+        addTb("1102", upEur * 54, 0);
+        if (extra_intro > 0) addTb("4110", 0, extra_intro * 35 * 54);
+        if (photo_pkg > 0) addTb("4180", 0, photo_pkg * 30 * 54);
+      }
+      const cogs = prod.direct_cogs_egp * (prod.category === "SPEEDBOAT" ? 1 : v.adults + v.children);
+      state.safes.find(s => s.code === "SAFE_JETTY").bal_egp -= cogs;
+      addTb(prod.cogs_account_code, cogs, 0); addTb("1102", 0, cogs);
+      if (gear_tag) {
+        const g = state.equipment.find(e => e.sc_tag === gear_tag);
+        if (g) g.status = "CHECKED_OUT";
+      }
+      v.payment_status = v.payment_status === "OPEN_REST" ? "PAID" : v.payment_status;
+      v.rest_amount = 0; v.rest_egp_equiv = 0; v.boarding_status = "BOARDED"; v.total_eur += upEur;
+      if (v.gclid) v.oct_synced = 1;
+      showToast(tr(
+        `✓ ${vo_no} Boarded! REST settled, Revenue & Marine Park COGS posted to GL${v.oct_synced ? ", & Google/Meta ROAS fired!" : "!"}`,
+        `✓ تم صعود ${vo_no} وتحصيل المتبقي وترحيل الإيراد ورسوم المحمية آلياً لميزان المراجعة!`
+      ));
+      render();
+    }
+
+    function doFxSwap(e) {
+      e.preventDefault();
+      const f = e.target;
+      const cur = f.sell_currency.value;
+      const amt = Number(f.sell_amount.value);
+      const rate = Number(f.actual_rate_egp.value);
+      const s = state.safes.find(x => x.code === "SAFE_CENTER");
+      if (s["bal_" + cur.toLowerCase()] < amt) return showToast(tr("Insufficient foreign cash in Center Safe!", "الرصيد بالعملة الأجنبية غير كافٍ بالخزينة!"), true);
+      const book = amt * state.fx[cur];
+      const rec = amt * rate;
+      const diff = rec - book;
+      s["bal_" + cur.toLowerCase()] -= amt;
+      s.bal_egp += rec;
+      addTb("1101", rec, book);
+      if (diff >= 0) addTb("7100", 0, diff); else addTb("7100", Math.abs(diff), 0);
+      showToast(tr(`✓ Clean Double-Entry FX Swap Posted: +${fmt(rec)} EGP (FX Gain/Loss: ${fmt(diff)} EGP)`, `✓ تم ترحيل قيد تحويل العملة بنجاح: +${fmt(rec)} ج.م (فروق عملة: ${fmt(diff)} ج.م)`));
+      render();
+    }
+
+    function render() {
+      const t = I18N[lang];
+      document.getElementById("hdr-title").textContent = t.title;
+      document.getElementById("hdr-sub").textContent = t.sub;
+      document.getElementById("lang-btn").textContent = t.langBtn;
+      document.getElementById("vid-heading").textContent = t.vidHeading;
+      document.getElementById("vid-sub").textContent = t.vidSub;
+      document.getElementById("sim-heading").textContent = t.simHeading;
+      updateVideoButtons();
+
+      document.getElementById("nav-tabs").innerHTML = t.tabs.map(tab => `
+        <button onclick="activeTab='${tab.id}';render()" class="text-start p-3 rounded-xl border transition cursor-pointer shadow-sm ${activeTab === tab.id ? 'bg-[#0A84A8] text-white border-[#0A84A8]' : 'bg-white text-[#0B1D2C] border-slate-200 hover:border-[#0A84A8]'}">
+          <div class="font-extrabold text-xs md:text-sm">${tab.label}</div>
+          <div class="text-xs opacity-80 truncate">${tab.sub}</div>
+        </button>
+      `).join("");
+
+      const curRole = t.tabs.find(x => x.id === activeTab);
+      document.getElementById("role-banner").innerHTML = `
+        <div class="space-y-1">
+          <div class="text-xs font-bold uppercase tracking-wider text-sky-300">${tr("ACTIVE ROLE WORKFLOW", "دور القسم وطريقة العمل")}: ${curRole.who}</div>
+          <div class="text-xs md:text-sm text-slate-100">${curRole.how}</div>
+        </div>
+      `;
+
+      const box = document.getElementById("view-container");
+      if (activeTab === "sales") box.innerHTML = renderSales();
+      else if (activeTab === "ops") box.innerHTML = renderOps();
+      else if (activeTab === "jetty") box.innerHTML = renderJetty();
+      else if (activeTab === "safe") box.innerHTML = renderSafe();
+      else if (activeTab === "gl") box.innerHTML = renderGL();
+      else if (activeTab === "cfo") box.innerHTML = renderCFO();
+    }
+
+    function renderSales() {
+      const agencies = state.counterparties.filter(c => c.party_type === "AGENCY_AR");
+      return `
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+          <form onsubmit="submitVoucher(event)" class="lg:col-span-5 bg-white border border-slate-200 rounded-2xl p-4 md:p-5 space-y-3 shadow-sm">
+            <div class="font-extrabold text-sm md:text-base border-b border-slate-100 pb-2 text-[#0B1D2C]">${tr("Issue Digital Voucher (Unique VO.NO + QR)", "إصدار فوتشر حجز رقمي موحد (VO.NO + QR)")}</div>
+            <div class="grid grid-cols-2 gap-2.5 text-xs">
+              <label class="space-y-1"><span class="text-slate-500 font-semibold">${tr("Channel", "قناة البيع")}</span>
+                <select name="channel" class="w-full p-2 rounded-lg border border-slate-300 bg-slate-50">
+                  <option value="HOTEL_DESK">Hotel Desk Rep</option>
+                  <option value="WHATSAPP_LARA">WhatsApp (Lara)</option>
+                  <option value="WEBSITE_ONLINE">Website Direct</option>
+                  <option value="AGENCY_B2B">B2B Agency (Credit Guard)</option>
+                </select>
+              </label>
+              <label class="space-y-1"><span class="text-slate-500 font-semibold">${tr("B2B Agency", "الشركة السياحية")}</span>
+                <select name="agency_id" class="w-full p-2 rounded-lg border border-slate-300 bg-slate-50">
+                  <option value="">— Direct Guest —</option>
+                  ${agencies.map(a => `<option value="${a.id}">${tr(a.name_en, a.name_ar)}</option>`).join("")}
+                </select>
+              </label>
+              <label class="space-y-1"><span class="text-slate-500 font-semibold">${tr("Guest Name", "اسم الضيف")}</span>
+                <input name="guest_name" required value="Elena Kowalska" class="w-full p-2 rounded-lg border border-slate-300" />
+              </label>
+              <label class="space-y-1"><span class="text-slate-500 font-semibold">${tr("Nationality", "الجنسية")}</span>
+                <select name="nationality" class="w-full p-2 rounded-lg border border-slate-300 bg-slate-50">
+                  <option value="ITALY">ITALY</option><option value="RUSSIA">RUSSIA</option><option value="POLAND">POLAND</option><option value="UK">UK</option><option value="GERMANY">GERMANY</option><option value="CHINA">CHINA</option>
+                </select>
+              </label>
+              <label class="space-y-1 col-span-2"><span class="text-slate-500 font-semibold">${tr("Trip / Course", "الرحلة أو الكورس")}</span>
+                <select name="product_code" class="w-full p-2 rounded-lg border border-slate-300 bg-slate-50">
+                  ${state.products.map(p => `<option value="${p.code}">${tr(p.name_en, p.name_ar)} (€${p.price_eur})</option>`).join("")}
+                </select>
+              </label>
+              <label class="space-y-1"><span class="text-slate-500 font-semibold">${tr("Hotel Zone", "الفندق")}</span>
+                <select name="hotel_code" class="w-full p-2 rounded-lg border border-slate-300 bg-slate-50">
+                  ${state.hotels.map(h => `<option value="${h.code}">${h.name_en} (${h.default_pickup_time})</option>`).join("")}
+                </select>
+              </label>
+              <label class="space-y-1"><span class="text-slate-500 font-semibold">${tr("Room & Date", "الغرفة والتاريخ")}</span>
+                <div class="flex gap-1">
+                  <input name="room_no" value="214" class="w-14 p-2 rounded-lg border border-slate-300" />
+                  <input name="trip_date" type="date" value="2026-11-22" class="flex-1 p-2 rounded-lg border border-slate-300" />
+                </div>
+              </label>
+              <label class="space-y-1"><span class="text-slate-500 font-semibold">${tr("Adults / Children", "كبار / أطفال")}</span>
+                <div class="flex gap-1">
+                  <input name="adults" type="number" min="1" max="30" value="2" class="w-1/2 p-2 rounded-lg border border-slate-300" />
+                  <input name="children" type="number" min="0" max="20" value="0" class="w-1/2 p-2 rounded-lg border border-slate-300" />
+                </div>
+              </label>
+              <label class="space-y-1"><span class="text-slate-500 font-semibold">${tr("Sales Rep", "المندوب")}</span>
+                <select name="sales_rep" class="w-full p-2 rounded-lg border border-slate-300 bg-slate-50">
+                  <option>REP_1</option><option>REP_2</option><option>LARA_AI</option>
+                </select>
+              </label>
+              <label class="space-y-1 col-span-2"><span class="text-slate-500 font-semibold">${tr("Deposit Paid Now (Auto-computes REST)", "العربون المحصل الآن (يحسب الباقي REST تلقائياً)")}</span>
+                <div class="grid grid-cols-3 gap-1.5">
+                  <input name="paid_amount" type="number" step="0.5" value="50" class="p-2 rounded-lg border border-slate-300" />
+                  <select name="paid_currency" class="p-2 rounded-lg border border-slate-300 bg-slate-50"><option>EUR</option><option>USD</option><option>GBP</option><option>EGP</option></select>
+                  <select name="payment_method" class="p-2 rounded-lg border border-slate-300 bg-slate-50"><option value="CASH">Cash Safe</option><option value="VISA">VISA (-2.5%)</option></select>
+                </div>
+              </label>
+            </div>
+            <button type="submit" class="w-full py-2.5 rounded-xl bg-[#0A84A8] hover:bg-[#086d8b] text-white font-bold text-xs md:text-sm cursor-pointer shadow">${tr("Generate QR Voucher & Post to Safe", "إصدار الفوتشر وترحيل العربون للخزينة")}</button>
+          </form>
+
+          <div class="lg:col-span-7 bg-white border border-slate-200 rounded-2xl p-4 md:p-5 space-y-3 shadow-sm">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+              <span class="font-extrabold text-sm md:text-base">${tr("Live Digital Vouchers", "سجل الفوتشرات الرقمية الحية")}</span>
+              <span class="text-xs text-slate-500">${state.vouchers.length} vouchers</span>
+            </div>
+            <div class="space-y-2.5 max-h-96 overflow-y-auto">
+              ${state.vouchers.map(v => `
+                <div class="p-3 rounded-xl border border-slate-200 bg-slate-50/60 flex flex-wrap items-center justify-between gap-2 text-xs">
+                  <div>
+                    <div class="font-bold font-mono text-[#0B1D2C]">${v.voucher_no} <span class="text-[#0A84A8]">[${v.qr_token}]</span> · ${v.guest_name} (${v.adults} Adl)</div>
+                    <div class="text-slate-500">${v.product_code} · ${v.hotel_code} Rm ${v.room_no} · Pickup ${v.pickup_time}</div>
+                  </div>
+                  <div class="text-end">
+                    <div class="font-bold">€${v.total_eur} (${fmt(v.total_egp)} EGP)</div>
+                    <div class="font-mono font-bold ${v.payment_status === 'PAID' ? 'text-emerald-600' : 'text-[#E05A36]'}">
+                      ${v.payment_status === "PAID" ? "PAID ✓" : `REST: ${v.rest_amount} ${v.rest_currency}`} · ${v.boarding_status}
+                    </div>
+                  </div>
+                </div>
+              `).join("")}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderOps() {
+      return `
+        <div class="bg-white border border-slate-200 rounded-2xl p-4 md:p-5 space-y-3 shadow-sm">
+          <div class="font-extrabold text-sm md:text-base border-b border-slate-100 pb-2">${tr("Boat Manifest & Transfer Dispatch (Enforces Max 4 Divers / PADI Guide)", "توزيع المراكب والترانسفير (تطبيق قاعدة ٤ غطاسين لكل مرشد)")}</div>
+          <div class="space-y-2.5">
+            ${state.vouchers.map(v => `
+              <div class="p-3 rounded-xl border border-slate-200 grid grid-cols-1 md:grid-cols-12 gap-2 items-center text-xs">
+                <div class="md:col-span-4">
+                  <div class="font-bold font-mono">${v.voucher_no} · ${v.guest_name} (${v.adults + v.children} PAX)</div>
+                  <div class="text-slate-500">${v.product_code} · Pickup ${v.pickup_time} · <b>${v.boarding_status}</b></div>
+                </div>
+                <div class="md:col-span-3">
+                  <select id="ves-${v.voucher_no}" class="w-full p-2 rounded-lg border border-slate-300 bg-slate-50">
+                    ${state.vessels.map(ves => `<option value="${ves.code}" ${v.vessel_code === ves.code ? "selected" : ""}>${ves.name_en}</option>`).join("")}
+                  </select>
+                </div>
+                <div class="md:col-span-2">
+                  <select id="gde-${v.voucher_no}" class="w-full p-2 rounded-lg border border-slate-300 bg-slate-50">
+                    <option ${v.dive_guide === "GUIDE_1 (PADI)" ? "selected" : ""}>GUIDE_1 (PADI)</option>
+                    <option ${v.dive_guide === "GUIDE_2 (PADI)" ? "selected" : ""}>GUIDE_2 (PADI)</option>
+                  </select>
+                </div>
+                <div class="md:col-span-2">
+                  <select id="trf-${v.voucher_no}" class="w-full p-2 rounded-lg border border-slate-300 bg-slate-50">
+                    <option value="CLUB_HIACE">Club HiAce Van</option>
+                    <option value="EXTERNAL_BUS">External Bus (650 EGP AP)</option>
+                  </select>
+                </div>
+                <div class="md:col-span-1">
+                  <button onclick="dispatchVoucher('${v.voucher_no}')" class="w-full py-2 px-2 rounded-lg bg-[#0A84A8] text-white font-bold cursor-pointer">${tr("Assign", "تسكين")}</button>
+                </div>
+              </div>
+            `).join("")}
+          </div>
+        </div>
+      `;
+    }
+
+    function renderJetty() {
+      const availGear = state.equipment.filter(e => e.status === "AVAILABLE");
+      return `
+        <div class="bg-white border border-slate-200 rounded-2xl p-4 md:p-5 space-y-3 shadow-sm">
+          <div class="font-extrabold text-sm md:text-base border-b border-slate-100 pb-2">${tr("Travco Jetty QR Gate, Onboard Upsells & Serialized Gear", "بوابة صعود السقالة وتحصيل المتبقي وتسليم العدة")}</div>
+          <div class="space-y-2.5">
+            ${state.vouchers.map(v => `
+              <div class="p-3 rounded-xl border border-slate-200 grid grid-cols-1 md:grid-cols-12 gap-2 items-center text-xs">
+                <div class="md:col-span-4">
+                  <div class="font-bold font-mono">${v.voucher_no} · ${v.guest_name}</div>
+                  <div class="text-slate-500">Boat: <b>${v.vessel_code || "Unassigned"}</b> · ${v.payment_status === "OPEN_REST" ? `<span class="text-[#E05A36] font-bold">Collect REST: ${v.rest_amount} ${v.rest_currency}</span>` : `<span class="text-emerald-600 font-bold">${v.payment_status}</span>`}</div>
+                </div>
+                <div class="md:col-span-2">
+                  <label class="block text-slate-500">+Extra Intro (€35)</label>
+                  <input id="exi-${v.voucher_no}" type="number" min="0" max="6" value="0" class="w-full p-1.5 rounded-lg border border-slate-300" />
+                </div>
+                <div class="md:col-span-2">
+                  <label class="block text-slate-500">+Photo Pkg (€30)</label>
+                  <input id="pho-${v.voucher_no}" type="number" min="0" max="4" value="0" class="w-full p-1.5 rounded-lg border border-slate-300" />
+                </div>
+                <div class="md:col-span-2">
+                  <label class="block text-slate-500">Gear Tag (S.C #)</label>
+                  <select id="gear-${v.voucher_no}" class="w-full p-1.5 rounded-lg border border-slate-300 bg-slate-50">
+                    <option value="">No Rental Gear</option>
+                    ${availGear.map(g => `<option value="${g.sc_tag}">${g.sc_tag} (${g.brand_model})</option>`).join("")}
+                  </select>
+                </div>
+                <div class="md:col-span-2">
+                  ${v.boarding_status === "BOARDED"
+                    ? `<div class="py-2 px-2 text-center rounded-lg bg-emerald-50 border border-emerald-300 text-emerald-700 font-bold">✓ BOARDED${v.oct_synced ? " · ROAS✓" : ""}</div>`
+                    : `<button onclick="boardJetty('${v.voucher_no}')" class="w-full py-2 px-2 rounded-lg bg-[#E05A36] text-white font-bold cursor-pointer shadow">${tr("Scan QR & Board", "تحصيل وصعود")}</button>`
+                  }
+                </div>
+              </div>
+            `).join("")}
+          </div>
+        </div>
+      `;
+    }
+
+    function renderSafe() {
+      return `
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+          <div class="lg:col-span-8 bg-white border border-slate-200 rounded-2xl p-4 md:p-5 space-y-3 shadow-sm">
+            <div class="font-extrabold text-sm md:text-base border-b border-slate-100 pb-2">${tr("Live Multi-Currency Safes, Custodies & POS", "أرصدة الخزائن والعهد والفيزا بأربع عملات")}</div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-xs border-collapse">
+                <thead>
+                  <tr class="border-b border-slate-200 text-slate-500">
+                    <th class="py-2 text-start">${tr("Safe / Wallet", "الخزينة / العهدة")}</th>
+                    <th class="py-2 text-end">EGP</th><th class="py-2 text-end">USD</th><th class="py-2 text-end">EUR</th><th class="py-2 text-end">GBP</th><th class="py-2 text-end">${tr("Total EGP Equiv", "الإجمالي بالمصري")}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${state.safes.map(s => {
+                    const eq = s.bal_egp + s.bal_usd * 50 + s.bal_eur * 54 + s.bal_gbp * 63;
+                    return `<tr class="border-b border-slate-100 font-mono">
+                      <td class="py-2.5 font-sans font-bold">${tr(s.name_en, s.name_ar)}</td>
+                      <td class="py-2.5 text-end">${fmt(s.bal_egp)}</td><td class="py-2.5 text-end">$${fmt(s.bal_usd)}</td><td class="py-2.5 text-end">€${fmt(s.bal_eur)}</td><td class="py-2.5 text-end">£${fmt(s.bal_gbp)}</td>
+                      <td class="py-2.5 text-end font-bold text-[#0A84A8]">${fmt(eq)} EGP</td>
+                    </tr>`;
+                  }).join("")}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <form onsubmit="doFxSwap(event)" class="lg:col-span-4 bg-white border border-slate-200 rounded-2xl p-4 md:p-5 space-y-3 text-xs shadow-sm">
+            <div class="font-extrabold text-sm md:text-base border-b border-slate-100 pb-2">${tr("Double-Entry FX Currency Swap", "تحويل عملة مزدوج بالخزينة")}</div>
+            <label class="block space-y-1"><span class="text-slate-500 font-semibold">${tr("Currency to Exchange", "العملة المباعة")}</span>
+              <select name="sell_currency" class="w-full p-2 rounded-lg border border-slate-300 bg-slate-50"><option value="USD">USD ($)</option><option value="EUR">EUR (€)</option><option value="GBP">GBP (£)</option></select>
+            </label>
+            <label class="block space-y-1"><span class="text-slate-500 font-semibold">${tr("Amount", "المبلغ")}</span>
+              <input name="sell_amount" type="number" min="50" value="500" class="w-full p-2 rounded-lg border border-slate-300" />
+            </label>
+            <label class="block space-y-1"><span class="text-slate-500 font-semibold">${tr("Bank / Exchange Rate (EGP)", "سعر الصرف الفعلي")}</span>
+              <input name="actual_rate_egp" type="number" step="0.05" value="50.35" class="w-full p-2 rounded-lg border border-slate-300" />
+            </label>
+            <button type="submit" class="w-full py-2.5 rounded-xl bg-[#0A84A8] text-white font-bold cursor-pointer">${tr("Post Balanced FX Swap", "تنفيذ وترحيل قيد العملة")}</button>
+          </form>
+        </div>
+      `;
+    }
+
+    function renderGL() {
+      const totDr = state.trial_balance.reduce((s, r) => s + r.debit_egp, 0);
+      const totCr = state.trial_balance.reduce((s, r) => s + r.credit_egp, 0);
+      return `
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+          <div class="lg:col-span-7 bg-white border border-slate-200 rounded-2xl p-4 md:p-5 space-y-3 shadow-sm">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+              <span class="font-extrabold text-sm md:text-base">${tr("Nadia — Automated Double-Entry Trial Balance", "نادية — ميزان المراجعة الآلي المتوازن")}</span>
+              <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-300 font-bold">Diff: ${fmt(totDr - totCr)} EGP ✓</span>
+            </div>
+            <div class="overflow-x-auto max-h-80">
+              <table class="w-full text-xs border-collapse">
+                <thead>
+                  <tr class="border-b border-slate-200 text-slate-500"><th class="py-1.5 text-start">Code</th><th class="py-1.5 text-start">${tr("Account", "الحساب")}</th><th class="py-1.5 text-end">${tr("Debit", "مدين")}</th><th class="py-1.5 text-end">${tr("Credit", "دائن")}</th></tr>
+                </thead>
+                <tbody>
+                  ${state.trial_balance.filter(r => r.debit_egp > 0 || r.credit_egp > 0).map(r => `
+                    <tr class="border-b border-slate-100 font-mono">
+                      <td class="py-1.5">${r.code}</td><td class="py-1.5 font-sans">${tr(r.name_en, r.name_ar)}</td>
+                      <td class="py-1.5 text-end">${fmt(r.debit_egp)}</td><td class="py-1.5 text-end">${fmt(r.credit_egp)}</td>
+                    </tr>
+                  `).join("")}
+                  <tr class="font-bold font-mono bg-slate-100"><td colspan="2" class="py-2 font-sans px-1">${tr("TOTAL BALANCED LEDGER", "الإجمالي المتوازن")}</td><td class="py-2 text-end">${fmt(totDr)}</td><td class="py-2 text-end">${fmt(totCr)}</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="lg:col-span-5 bg-white border border-slate-200 rounded-2xl p-4 md:p-5 space-y-3 shadow-sm">
+            <div class="font-extrabold text-sm md:text-base border-b border-slate-100 pb-2">${tr("Agency Credit Limits & Suppliers", "مراقبة ائتمان الشركات والموردين")}</div>
+            <div class="space-y-2 text-xs">
+              ${state.counterparties.map(c => {
+                const over = c.party_type === "AGENCY_AR" && c.credit_limit_egp > 0 && c.current_balance_egp > c.credit_limit_egp;
+                return `<div class="p-3 rounded-xl border border-slate-200 flex items-center justify-between">
+                  <div>
+                    <div class="font-bold">${tr(c.name_en, c.name_ar)}</div>
+                    <div class="text-slate-500">${c.party_type === "AGENCY_AR" ? `Limit: ${fmt(c.credit_limit_egp)} EGP` : "Supplier Payable"}</div>
+                  </div>
+                  <div class="text-end font-mono">
+                    <div class="font-bold">${fmt(c.current_balance_egp)} EGP</div>
+                    ${over ? `<span class="text-red-600 font-bold">OVER LIMIT — BLOCKED</span>` : `<span class="text-emerald-600 font-bold">Active ✓</span>`}
+                  </div>
+                </div>`;
+              }).join("")}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderCFO() {
+      return `
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+          <div class="lg:col-span-6 bg-white border border-slate-200 rounded-2xl p-4 md:p-5 space-y-3 shadow-sm text-xs">
+            <div class="font-extrabold text-sm md:text-base border-b border-slate-100 pb-2">${tr("Tarek CFO — Branch P&L, Drydock & Marketing ROAS", "المدير المالي طارق — ربحية الفروع وعائد الإعلانات")}</div>
+            <div class="grid grid-cols-2 gap-3">
+              <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+                <div class="text-slate-500">${tr("Trial Balance Variance", "فروق ميزان المراجعة")}</div>
+                <div class="font-extrabold text-lg text-emerald-600 font-mono">0.00 EGP ✓</div>
+              </div>
+              <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+                <div class="text-slate-500">${tr("Duplicate VO.NO Allowed", "تكرار أرقام الفوتشرات")}</div>
+                <div class="font-extrabold text-lg text-[#0A84A8] font-mono">0 (Blocked)</div>
+              </div>
+              <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+                <div class="text-slate-500">${tr("Drydock CapEx Accounting", "معالجة عمرة المراكب (الأزق)")}</div>
+                <div class="font-bold text-sm text-[#0B1D2C] mt-1">${tr("Split cleanly: Club CapEx (1530) + Partner Qirat AR (1330)", "مقسمة تلقائياً: أصول رأسمالية + حصة الشريك بالقيراط")}</div>
+              </div>
+              <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+                <div class="text-slate-500">${tr("Google & Meta Ads Sync", "ربط حملات جوجل وميتا")}</div>
+                <div class="font-bold text-sm text-[#0B1D2C] mt-1">${tr("Auto-fires Final Paid EUR when QR boards at Jetty", "إرسال الإيراد الفعلي تلقائياً فور صعود الضيف للسقالة")}</div>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-6 bg-white border border-slate-200 rounded-2xl p-4 md:p-5 space-y-3 shadow-sm text-xs">
+            <div class="font-extrabold text-sm md:text-base border-b border-slate-100 pb-2">${tr("Fleet 24-Qirat Ownership & Drydock Ledger", "حصص المراكب (٢٤ قيراط) وسجل العمرة")}</div>
+            <div class="space-y-2">
+              ${state.vessels.map(v => `
+                <div class="p-3 rounded-xl border border-slate-200 flex items-center justify-between">
+                  <div>
+                    <div class="font-bold">${tr(v.name_en, v.name_ar)}</div>
+                    <div class="text-slate-500">${v.partner_share_note}</div>
+                  </div>
+                  <div class="text-end font-mono">
+                    <div class="font-bold">${fmt(v.monthly_fixed_rent_egp)} EGP/mo</div>
+                    ${v.drydock_egp ? `<div class="text-[#0A84A8]">Drydock CapEx: ${fmt(v.drydock_egp)}</div>` : ""}
+                  </div>
+                </div>
+              `).join("")}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    render();
+  </script>
+</body>
+</html>
