@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>التقرير التنفيذي الشامل لمشروع التحول الرقمي ومنظومة النمو الذكي — Sea College Dive Club</title>
+  <meta name="description" content="العرض التقديمي والتقرير التنفيذي التفاعلي الشامل لمشروع التحول الرقمي ومنظومة النمو الذكي لمركز سي كوليدج دايف كلوب شرم الشيخ (14 – 25 نوفمبر 2026)." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" href="./images/logo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;600;700;800;900&family=Inter:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="mode-report">
+
+  <!-- ==================== TOP EXECUTIVE COMMAND BAR ==================== -->
+  <header class="topbar no-print" id="topbar">
+    <div class="topbar__inner">
+      <div class="brand">
+        <img src="./images/logo.jpg" alt="Sea College Dive Club Logo" class="brand__logo" />
+        <div>
+          <h1 class="brand__title">سي كوليدج دايف كلوب — التقرير التنفيذي الشامل للتحول الرقمي</h1>
+          <p class="brand__sub">نسخة مجلس الإدارة والملاك · <bdi>14 – 25 Nov 2026</bdi> (<bdi>12</bdi> يوماً من التنفيذ المكثف)</p>
+        </div>
+      </div>
+
+      <div class="topbar__actions">
+        <div class="mode-switch" role="tablist" aria-label="وضع العرض">
+          <button type="button" id="btn-mode-report" class="mode-switch__btn is-active" onclick="setViewMode('report')">
+            📑 التقرير التفاعلي الكامل
+          </button>
+          <button type="button" id="btn-mode-deck" class="mode-switch__btn" onclick="setViewMode('deck')">
+            🖥️ وضع شرائح العرض (<bdi>16:9</bdi>)
+          </button>
+        </div>
+
+        <a href="./Sea-College-Executive-Report-Nov2026.pptx" download class="action-btn action-btn--pptx" id="btn-dl-pptx">
+          ⬇️ تحميل ملف العرض <bdi>PPTX</bdi>
+        </a>
+        <a href="./Sea-College-Executive-Report-Nov2026.pdf" download class="action-btn action-btn--pdf" id="btn-dl-pdf">
+          📄 نسخة <bdi>PDF</bdi>
+        </a>
+        <button type="button" class="action-btn action-btn--wa" id="btn-share-wa" onclick="shareReportWhatsApp()">
+          📲 مشاركة مع الملاك
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== SLIDE QUICK NAVIGATOR ==================== -->
+  <nav class="deck-nav no-print" aria-label="التنقل السريع بين الشرائح">
+    <div class="deck-nav__inner">
+      <div class="deck-pills" id="deck-pills">
+        <button class="deck-pill is-active" onclick="goToSlide(0)">1. الغلاف والاعتمادات</button>
+        <button class="deck-pill" onclick="goToSlide(1)">2. الملخص والمؤشرات</button>
+        <button class="deck-pill" onclick="goToSlide(2)">3. فريق الذكاء الاصطناعي</button>
+        <button class="deck-pill" onclick="goToSlide(3)">4. الجدول الزمني (12 يوماً)</button>
+        <button class="deck-pill" onclick="goToSlide(4)">5. البنية واللغات الـ 8 و AEO</button>
+        <button class="deck-pill" onclick="goToSlide(5)">6. أدوات التحويل الخمس</button>
+        <button class="deck-pill" onclick="goToSlide(6)">7. التتبع وكتالوج ميتا والثقة</button>
+        <button class="deck-pill" onclick="goToSlide(7)">8. الجداول الأربعة و ERP ولارا</button>
+        <button class="deck-pill" onclick="goToSlide(8)">9. مصفوفة LIVE مقابل STAGED</button>
+        <button class="deck-pill" onclick="goToSlide(9)">10. الفوائد الاستراتيجية الـ 5</button>
+        <button class="deck-pill" onclick="goToSlide(10)">11. نتائج Google Ads (72 ساعة)</button>
+        <button class="deck-pill" onclick="goToSlide(11)">12. تشريح 16 عميل CRM واليورو</button>
+        <button class="deck-pill" onclick="goToSlide(12)">13. خطة الـ 90 يوماً (12 مبادرة)</button>
+        <button class="deck-pill" onclick="goToSlide(13)">14. القرارات التنفيذية الـ 4</button>
+      </div>
+
+      <div class="deck-controls">
+        <button type="button" class="ctrl-btn" id="btn-prev" onclick="stepSlide(-1)">◀ السابق</button>
+        <span class="slide-counter" id="slide-counter">1 / 14</span>
+        <button type="button" class="ctrl-btn" id="btn-next" onclick="stepSlide(1)">التالي ▶</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== MAIN 14-SLIDE PRESENTATION STAGE ==================== -->
+  <main class="stage" id="stage">
+
+    <!-- ===================================================================
+         SLIDE 1: EXECUTIVE COVER & OFFICIAL ACCREDITATIONS
+         =================================================================== -->
+    <section class="slide slide--dark is-active" id="slide-1" data-slide-index="0">
+      <div class="slide__head">
+        <div>
+          <div class="slide__eyebrow">
+            <span class="slide__num-badge">01 / 14</span>
+            <span>تقرير مجلس الإدارة والملاك · إعداد ومراجعة فريق العمل المتكامل (<bdi>Teamwork</bdi>)</span>
+          </div>
+          <h2 class="slide__title" style="font-size:1.15rem;color:#9EE7FF;">سي كوليدج دايف كلوب — المنتزه (<bdi>Al Montazah</bdi>)، شرم الشيخ</h2>
+        </div>
+        <span class="slide__tag">تاريخ التقرير: <bdi>25</bdi> نوفمبر <bdi>2026</bdi></span>
+      </div>
+
+      <div class="slide__body">
+        <div class="cover-hero">
+          <div>
+            <div class="cover-accreditations">
+              <span class="acc-pill acc-pill--gold">⭐ منتجع غوص <bdi>PADI 5 Star Dive Resort</bdi></span>
+              <span class="acc-pill">🌊 مبادرة <bdi>Adopt the Blue</bdi></span>
+              <span class="acc-pill">🏛️ معتمد من غرفة سياحة الغوص المصرية · <bdi>CDWS Dive Center</bdi></span>
+            </div>
+
+            <h2 class="cover-title">التقرير التنفيذي الشامل لمشروع التحول الرقمي ومنظومة النمو الذكي</h2>
+            <p class="cover-lead">
+              الانتقال الجذري خلال <strong><bdi>12</bdi> يوماً فقط</strong> من موقع <bdi>WordPress / WooCommerce</bdi> تقليدي بطيء بلا تتبع إلى <strong>منصة حجز وتجارة سياحية مخصصة فائقة السرعة (<bdi>Custom PHP 8 + Vanilla JS/CSS</bdi>) بـ <bdi>8</bdi> لغات عالمية</strong>، مدعومة بتتبع سحابي من الطرف الأول، وأتمتة تسعير لحظية باليورو (<bdi>EUR</bdi>)، وفريق ذكاء اصطناعي يعمل على مدار الساعة (<bdi>24/7</bdi>).
+            </p>
+
+            <div class="cover-meta-grid">
+              <div class="cover-meta-box">
+                <span class="cover-meta-box__label">🌐 النطاق الرسمي الحي</span>
+                <span class="cover-meta-box__val"><bdi>https://seacollegediveclub.com</bdi></span>
+              </div>
+              <div class="cover-meta-box">
+                <span class="cover-meta-box__label">💻 المستودع البرمجي والنشر التلقائي</span>
+                <span class="cover-meta-box__val"><bdi>sea-college-website (Hostinger Git)</bdi></span>
+              </div>
+              <div class="cover-meta-box">
+                <span class="cover-meta-box__label">📅 الفترة المشمولة بالتقرير</span>
+                <span class="cover-meta-box__val"><bdi>14</bdi> نوفمبر <bdi>2026</bdi> – <bdi>25</bdi> نوفمبر <bdi>2026</bdi></span>
+              </div>
+              <div class="cover-meta-box">
+                <span class="cover-meta-box__label">⭐ السمعة الرقمية الموثقة</span>
+                <span class="cover-meta-box__val"><bdi>4.9★ Google (3,220+)</bdi> · <bdi>Tripadvisor 4.9</bdi></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="cover-visual">
+            <div class="photo-collage">
+              <div class="photo-card photo-card--wide">
+                <img src="./images/yacht.jpg" alt="يخت أوشيانو الخاص - سي كوليدج شرم الشيخ" />
+                <div class="photo-card__cap">🚤 يخت خاص (<bdi>Private Yacht</bdi>) — أول عميل موثق بقيمة <bdi>€900</bdi> عبر <bdi>chatgpt.com</bdi></div>
+              </div>
+              <div class="photo-card">
+                <img src="./images/entrance.jpg" alt="مدخل مركز سي كوليدج دايف كلوب شرم الشيخ" />
+                <div class="photo-card__cap">🏛️ المقر الرئيسي — المنتزه، شرم الشيخ</div>
+              </div>
+              <div class="photo-card">
+                <img src="./images/course.jpg" alt="تدريب غوص PADI في البحر الأحمر" />
+                <div class="photo-card__cap">🤿 دورات <bdi>PADI</bdi> ورحلات البحر الأحمر بـ <bdi>8</bdi> لغات</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cover-kpi-strip">
+          <div class="stat-hero">
+            <span class="stat-hero__num">8 لغات / 800</span>
+            <span class="stat-hero__lbl">رابط دولي مفهرس باستجابة &lt; 1 ثانية</span>
+          </div>
+          <div class="stat-hero">
+            <span class="stat-hero__num">4x (+300%)</span>
+            <span class="stat-hero__lbl">نمو تحويلات Google Ads في أول 72 ساعة</span>
+          </div>
+          <div class="stat-hero">
+            <span class="stat-hero__num">16 عميلاً</span>
+            <span class="stat-hero__lbl">مسجلين فعلياً في الـ CRM (6 gclid + 10 مجاني/AI)</span>
+          </div>
+          <div class="stat-hero">
+            <span class="stat-hero__num">80 خدمة EUR</span>
+            <span class="stat-hero__lbl">تحديث لحظي للأسعار والخصومات + 188 اختبار E2E</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide__foot">
+        <span>التقرير التنفيذي الشامل — <bdi>Sea College Dive Club · Sharm El Sheikh</bdi></span>
+        <span>الشريحة <bdi>1</bdi> من <bdi>14</bdi> · جميع الأرقام والنتائج موثقة حتى <bdi>25 نوفمبر 2026</bdi></span>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SLIDE 2: EXECUTIVE SUMMARY & 7 HEADLINE KPIs (BEFORE VS AFTER)
+         =================================================================== -->
+    <section class="slide slide--sand" id="slide-2" data-slide-index="1">
+      <div class="slide__head">
+        <div>
+          <div class="slide__eyebrow">
+            <span class="slide__num-badge">02 / 14</span>
+            <span>المحور الأول · الملخص التنفيذي وأبرز المؤشرات القياسية (<bdi>Headline KPIs</bdi>)</span>
+          </div>
+          <h2 class="slide__title">نقلة معمارية وتجارية شاملة: مقارنة الوضع السابق مقابل المنظومة الحالية</h2>
+          <p class="slide__subtitle">تحويل كامل البنية التقنية والتسويقية والتشغيلية خلال <bdi>12</bdi> يوماً (<bdi>14 – 25 نوفمبر 2026</bdi>)</p>
+        </div>
+        <span class="slide__tag">7 مؤشرات قياسية رئيسية</span>
+      </div>
+
+      <div class="slide__body">
+        <!-- Illustrated Before vs After Transformation Bridge -->
+        <div class="ba-bridge">
+          <div class="ba-box ba-box--before">
+            <div style="font-weight:900;color:#991B1B;font-size:0.88rem;margin-bottom:0.3rem;">❌ الوضع السابق (<bdi>WordPress / WooCommerce</bdi> القديم)</div>
+            <div style="font-size:0.78rem;color:#7F1D1D;">قوالب ثقيلة بطيئة · روابط ميتة · انعدام تتبع نقرات واتساب و<code>gclid</code> · هدر إعلاني بتكلفة <bdi>~18,345 EGP</bdi> للتحويل · تعديل أسعار يدوي معقد · <bdi>0</bdi> ظهور في محركات <bdi>AI</bdi>.</div>
+          </div>
+          <div class="ba-arrow">
+            <svg width="46" height="28" viewBox="0 0 46 28" fill="none" aria-hidden="true">
+              <path d="M44 14H6M6 14L16 4M6 14L16 24" stroke="#0A84A8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>12 يوماً</span>
+          </div>
+          <div class="ba-box ba-box--after">
+            <div style="font-weight:900;color:#065F46;font-size:0.88rem;margin-bottom:0.3rem;">✅ الوضع الحالي (<bdi>Custom PHP 8 + First-Party Cloud + AI 24/7</bdi>)</div>
+            <div style="font-size:0.78rem;color:#064E3B;">سرعة &lt; ثانية عبر <bdi>LiteSpeed</bdi> · <bdi>8</bdi> لغات و<bdi>800</bdi> رابط · <bdi>188</bdi> اختباراً آلياً · <bdi>8</bdi> تحويلات موثقة (<bdi>4x</bdi>) · <bdi>16</bdi> عميل CRM · يخت <bdi>€900</bdi> من <bdi>ChatGPT</bdi> · تحكم لحظي بـ <bdi>80</bdi> خدمة باليورو.</div>
+          </div>
+        </div>
+
+        <!-- Complete 7-Row Headline KPIs Table -->
+        <div class="exec-table-wrap">
+          <table class="exec-table">
+            <thead>
+              <tr>
+                <th style="width:19%;">المؤشر القياسي</th>
+                <th style="width:25%;">الوضع السابق (<bdi>WordPress</bdi> القديم)</th>
+                <th style="width:33%;">الوضع الحالي بعد التطوير (<bdi>25 نوفمبر 2026</bdi>)</th>
+                <th style="width:23%;">الأثر التجاري والتشغيلي المباشر</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>⚡ البنية التقنية والسرعة</strong></td>
+                <td class="cell-old">قوالب وإضافات <bdi>WordPress / WooCommerce</bdi> ثقيلة</td>
+                <td class="cell-new">منصة مخصصة بـ <code>PHP 8 + Vanilla JS/CSS</code> باستجابة أقل من ثانية عبر <code>LiteSpeed</code></td>
+                <td class="cell-impact">إلغاء بطء التحميل ورفع معدل التحويل على الجوال</td>
+              </tr>
+              <tr>
+                <td><strong>🌍 التغطية اللغوية والفهرسة</strong></td>
+                <td class="cell-old">صفحات محدودة وروابط قديمة معطوبة</td>
+                <td class="cell-new"><strong><bdi>8</bdi> لغات</strong> (<code>en, ru, it, pl, de, fr, ar, zh</code>) و<strong><bdi>800</bdi> رابط محلي مفهرس</strong></td>
+                <td class="cell-impact">الوصول المباشر لأسواق أوروبا وروسيا والعرب وآسيا</td>
+              </tr>
+              <tr>
+                <td><strong>🛡️ الجودة والاختبارات الآلية</strong></td>
+                <td class="cell-old">بدون اختبارات آلية (<bdi>0</bdi>)</td>
+                <td class="cell-new">اجتياز <strong><bdi>188</bdi> اختباراً آلياً شاملاً</strong> (<bdi>E2E Suite Passing</bdi>)</td>
+                <td class="cell-impact">استقرار تشغيلي وحماية مسارات الحجز من الأعطال</td>
+              </tr>
+              <tr>
+                <td><strong>📈 التحويلات في <bdi>Google Ads</bdi></strong></td>
+                <td class="cell-old"><bdi>2</bdi> مكالمة قديمة فقط (بتكلفة <bdi>~18,345 EGP</bdi> للتحويل)</td>
+                <td class="cell-new"><strong><bdi>8</bdi> تحويلات موثقة</strong> في أول <bdi>72</bdi> ساعة (<code>Conv. Value = 4,732.61</code>)</td>
+                <td class="cell-impact">نمو <strong><bdi>4x</bdi> (أربعة أضعاف)</strong> في التحويلات الموثقة</td>
+              </tr>
+              <tr>
+                <td><strong>🧲 إجمالي العملاء في الـ <bdi>CRM</bdi></strong></td>
+                <td class="cell-old"><bdi>0</bdi> تتبع تلقائي لواتساب أو معرّف <code>gclid</code></td>
+                <td class="cell-new"><strong><bdi>16</bdi> عميلاً محتملاً حقيقياً</strong> (<bdi>6</bdi> إعلانات جوجل <code>gclid</code> + <bdi>10</bdi> بحث طبيعي ومباشر و<code>chatgpt.com</code>)</td>
+                <td class="cell-impact">تدفق يومي موثق لطلبات الغوص والدورات واليخوت</td>
+              </tr>
+              <tr>
+                <td><strong>🤖 الظهور في محركات <bdi>AI (AEO)</bdi></strong></td>
+                <td class="cell-old">غير مهيأ (<bdi>0</bdi> ملفات <code>llms.txt</code>)</td>
+                <td class="cell-new">تفعيل <code>llms.txt</code> و<code>llms-full.txt</code> واستقطاب أول عميل يخت خاص بقيمة <strong><bdi>€900</bdi></strong> من <code>chatgpt.com</code></td>
+                <td class="cell-impact">فتح قناة مبيعات مجانية عالية القيمة الشرائية</td>
+              </tr>
+              <tr>
+                <td><strong>💶 إدارة الأسعار والخصومات</strong></td>
+                <td class="cell-old">تعديل يدوي بطيء ومعقد داخل لوحة تحكم ووردبريس</td>
+                <td class="cell-new">تحكم فوري بدون كود لـ <strong><bdi>80</bdi> خدمة باليورو (<bdi>EUR</bdi>)</strong> عبر <code>Google Sheets</code> + Webhook حي</td>
+                <td class="cell-impact">تحديث الأسعار والعروض الترويجية في ثوانٍ</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="slide__foot">
+        <span>لوحة المؤشرات القياسية السريعة (<bdi>Headline KPIs</bdi>) — مقارنة موثقة قبل وبعد التحول الرقمي</span>
+        <span>الشريحة <bdi>2</bdi> من <bdi>14</bdi></span>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SLIDE 3: THE 3-AGENT 24/7 AI SPECIALIST TEAM
+         =================================================================== -->
+    <section class="slide" id="slide-3" data-slide-index="2">
+      <div class="slide__head">
+        <div>
+          <div class="slide__eyebrow">
+            <span class="slide__num-badge">03 / 14</span>
+            <span>منظومة التشغيل الذكي · فريق الذكاء الاصطناعي التخصصي (<bdi>AI Specialist Team</bdi>)</span>
+          </div>
+          <h2 class="slide__title">ثلاثة وكلاء ذكاء اصطناعي متخصصين يديرون الهندسة والتسويق وخدمة الغواصين <bdi>24/7</bdi></h2>
+          <p class="slide__subtitle">تكامل لحظي مباشر بين الموقع الرسمي، الحسابات الإعلانية، جداول الأسعار والـ <bdi>CRM</bdi>، وصندوق رسائل ميتا وواتساب</p>
+        </div>
+        <span class="slide__tag">تشغيل متكامل <bdi>24/7</bdi></span>
+      </div>
+
+      <div class="slide__body">
+        <!-- SVG Orchestration Illustration -->
+        <div class="panel panel--navy" style="padding:0.85rem 1.1rem;">
+          <svg class="svg-diagram" viewBox="0 0 1160 155" role="img" aria-label="مخطط تكامل وكلاء الذكاء الاصطناعي الثلاثة">
+            <defs>
+              <linearGradient id="flowLine" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#25D366"/>
+                <stop offset="50%" stop-color="#F28C28"/>
+                <stop offset="100%" stop-color="#1FA3C9"/>
+              </linearGradient>
+            </defs>
+            <!-- Connecting Data Bus -->
+            <line x1="150" y1="78" x2="1010" y2="78" stroke="url(#flowLine)" stroke-width="4" stroke-dasharray="9 6" />
+            <!-- Node 1: Website & ERP (Right in RTL visual) -->
+            <rect x="855" y="20" width="275" height="115" rx="16" fill="#13334C" stroke="#1FA3C9" stroke-width="2"/>
+            <text x="992" y="54" fill="#8BE3FF" font-family="Cairo, sans-serif" font-size="15" font-weight="800" text-anchor="middle">💻 أيمن (Ayman) — الهندسة والربط</text>
+            <text x="992" y="80" fill="#FFFFFF" font-family="Cairo, sans-serif" font-size="13" font-weight="600" text-anchor="middle">PHP 8 · LiteSpeed · Security WAF</text>
+            <text x="992" y="106" fill="#B8DFF0" font-family="Cairo, sans-serif" font-size="12" text-anchor="middle">Webhooks الأسعار والـ CRM ونظام ERP</text>
+
+            <!-- Center Hub: Unified Data Brain -->
+            <rect x="442" y="20" width="276" height="115" rx="16" fill="#2A1D1D" stroke="#F28C28" stroke-width="2"/>
+            <text x="580" y="54" fill="#FFD099" font-family="Cairo, sans-serif" font-size="15" font-weight="800" text-anchor="middle">🎯 حسام (Hossam) — الإعلانات والـ ROAS</text>
+            <text x="580" y="80" fill="#FFFFFF" font-family="Cairo, sans-serif" font-size="13" font-weight="600" text-anchor="middle">Google Ads · Meta CAPI v21.0 · First-Party</text>
+            <text x="580" y="106" fill="#FDE68A" font-family="Cairo, sans-serif" font-size="12" text-anchor="middle">التدقيق الجنائي للإنفاق وضبط Target CPA</text>
+
+            <!-- Node 3: Customer Care & WhatsApp -->
+            <rect x="30" y="20" width="275" height="115" rx="16" fill="#0D3327" stroke="#25D366" stroke-width="2"/>
+            <text x="167" y="54" fill="#6EE7B7" font-family="Cairo, sans-serif" font-size="15" font-weight="800" text-anchor="middle">💬 لارا (Lara) — رعاية الغواصين 24/7</text>
+            <text x="167" y="80" fill="#FFFFFF" font-family="Cairo, sans-serif" font-size="13" font-weight="600" text-anchor="middle">صندوق Meta &amp; WhatsApp بـ 9 لغات</text>
+            <text x="167" y="106" fill="#A7F3D0" font-family="Cairo, sans-serif" font-size="12" text-anchor="middle">مُدرّبة على محادثات عملاء Sea College الحقيقية</text>
+
+            <!-- Bidirectional Badges -->
+            <circle cx="375" cy="78" r="18" fill="#0B1D2C" stroke="#25D366" stroke-width="2"/>
+            <text x="375" y="83" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="12" font-weight="800" text-anchor="middle">⇄</text>
+            <circle cx="785" cy="78" r="18" fill="#0B1D2C" stroke="#1FA3C9" stroke-width="2"/>
+            <text x="785" y="83" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="12" font-weight="800" text-anchor="middle">⇄</text>
+          </svg>
+        </div>
+
+        <!-- 3 Detailed AI Agent Cards -->
+        <div class="grid-3">
+          <article class="agent-card">
+            <div class="agent-card__top">
+              <div class="agent-avatar agent-avatar--ayman">أ</div>
+              <div>
+                <h3 class="agent-name">1. أيمن (<bdi>Ayman</bdi>)</h3>
+                <p class="agent-role">كبير مهندسي تطوير الموقع والتكاملات البرمجية</p>
+              </div>
+            </div>
+            <ul class="agent-list">
+              <li>مسؤول عن البنية البرمجية المخصصة بـ <code>PHP 8 + Vanilla JS/CSS</code> والأداء الفائق أقل من ثانية.</li>
+              <li>التحصين الأمني الصارم (<code>CSP / HSTS / WAF</code>) واستقرار الـ <strong><bdi>188</bdi> اختباراً آلياً</strong>.</li>
+              <li>الربط اللحظي للـ <bdi>Webhooks</bdi> مع جداول بيانات جوجل الأربعة، ومنصات الإعلانات، وتطبيق الإدارة <code>erp-app.php</code>.</li>
+            </ul>
+            <div class="agent-tags">
+              <span class="mini-chip">8 لغات · 800 رابط</span>
+              <span class="mini-chip">188 E2E Tests</span>
+              <span class="mini-chip">Live Webhooks</span>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <div class="agent-card__top">
+              <div class="agent-avatar agent-avatar--hossam">ح</div>
+              <div>
+                <h3 class="agent-name">2. حسام (<bdi>Hossam</bdi>)</h3>
+                <p class="agent-role">مدير التسويق الرقمي الأدائي والإعلانات الممولة</p>
+              </div>
+            </div>
+            <ul class="agent-list">
+              <li>هيكلة وإدارة حملات <code>Google Ads</code> و<code>Meta Ads</code> وكتالوج المنتجات الديناميكي (<bdi>59</bdi> منتجاً).</li>
+              <li>إرساء التتبع الدقيق من الطرف الأول (<bdi>First-Party Tracking</bdi>) وكوكي الإحالة <code>sc_attr</code>.</li>
+              <li>التحليل الجنائي اليومي للإنفاق وعبارات البحث لآخر <bdi>7</bdi> أيام، وضبط سقف تكلفة الاكتساب (<code>Target CPA = 380 EGP</code>).</li>
+            </ul>
+            <div class="agent-tags">
+              <span class="mini-chip">Google Ads v2.2</span>
+              <span class="mini-chip">Meta CAPI v21.0</span>
+              <span class="mini-chip">CPA Forensics</span>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <div class="agent-card__top">
+              <div class="agent-avatar agent-avatar--lara">ل</div>
+              <div>
+                <h3 class="agent-name">3. لارا (<bdi>Lara</bdi>)</h3>
+                <p class="agent-role">رئيسة رعاية العملاء وكونسيرج الغواصين وأخصائية ميتا وواتساب</p>
+              </div>
+            </div>
+            <ul class="agent-list">
+              <li>مُدرَّبة تدريباً واقعياً على <strong>محادثات عملاء <bdi>Sea College</bdi> الفعلية على واتساب</strong> وأسئلة الغواصين الحقيقية.</li>
+              <li>الرد الفوري الاحترافي بـ <strong><bdi>9</bdi> لغات عالمية</strong> على مدار الساعة (<bdi>24/7</bdi>) عبر ويب هوك حي.</li>
+              <li>توجيه الغواصين لإتمام الحجز على الموقع، تأكيد مناطق التوصيل الفندقي، وتسجيل الوصول المسبق <code>/check-in</code>.</li>
+            </ul>
+            <div class="agent-tags">
+              <span class="mini-chip">9 لغات حية</span>
+              <span class="mini-chip">استجابة 24/7</span>
+              <span class="mini-chip">/webhooks/meta-inbox</span>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="slide__foot">
+        <span>فريق الذكاء الاصطناعي التخصصي المشغّل للمنظومة (<bdi>Ayman · Hossam · Lara</bdi>)</span>
+        <span>الشريحة <bdi>3</bdi> من <bdi>14</bdi></span>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SLIDE 4: 12-DAY EXECUTION TIMELINE & 4 PHASES (14 - 25 NOV 2026)
+         =================================================================== -->
+    <section class="slide slide--sand" id="slide-4" data-slide-index="3">
+      <div class="slide__head">
+        <div>
+          <div class="slide__eyebrow">
+            <span class="slide__num-badge">04 / 14</span>
+            <span>المحور الثاني · الجدول الزمني الشامل ومراحل التنفيذ الأربع</span>
+          </div>
+          <h2 class="slide__title">خريطة الإنجاز المكثف خلال <bdi>12</bdi> يوماً (<bdi>14</bdi> نوفمبر – <bdi>25</bdi> نوفمبر <bdi>2026</bdi>)</h2>
+          <p class="slide__subtitle">تسلسل هندسي وتسويقي محكم من إعادة بناء الموقع بالكامل حتى تشغيل الـ <bdi>ERP</bdi> والرد الآلي <bdi>24/7</bdi></p>
+        </div>
+        <span class="slide__tag">4 مراحل متتالية</span>
+      </div>
+
+      <div class="slide__body">
+        <!-- Visual 12-Day Gantt Bar -->
+        <div class="gantt-bar-wrap">
+          <div class="gantt-days">
+            <span>14 Nov</span><span>15 Nov</span><span>16 Nov</span><span>17 Nov</span><span>18 Nov</span>
+            <span>19 Nov</span><span>20 Nov</span><span>21 Nov</span>
+            <span>22 Nov</span>
+            <span>23 Nov</span><span>24 Nov</span><span>25 Nov</span>
+          </div>
+          <div class="gantt-tracks">
+            <div class="gantt-seg gantt-seg--p1">المرحلة 1 (14–18 نوفمبر): الموقع بـ 8 لغات و 5 أدوات</div>
+            <div class="gantt-seg gantt-seg--p2">المرحلة 2 (19–21): التتبع و AI</div>
+            <div class="gantt-seg gantt-seg--p3">3 (22)</div>
+            <div class="gantt-seg gantt-seg--p4">المرحلة 4 (23–25): التكامل، ERP ولارا</div>
+          </div>
+        </div>
+
+        <!-- 4 Detailed Phase Cards -->
+        <div class="grid-4">
+          <div class="phase-card">
+            <div class="phase-card__hdr">
+              <span class="phase-badge" style="background:var(--ocean-500);">المرحلة 1 (<bdi>Phase 1</bdi>)</span>
+              <span class="phase-date"><bdi>14 – 18</bdi> نوفمبر</span>
+            </div>
+            <strong style="font-size:0.84rem;color:var(--navy-900);">إعادة البناء بـ 8 لغات والانتقال من WordPress</strong>
+            <ul class="phase-list">
+              <li>إطلاق الموقع المخصص بـ <code>PHP 8</code> وفهرسة <strong><bdi>800</bdi> رابط</strong>.</li>
+              <li>تفعيل <code>sitemap.xml</code> و<code>llms.txt</code> / <code>llms-full.txt</code>.</li>
+              <li>تنظيف الروابط الميتة بكود <code>410 Gone</code> وتأمين <code>CSP/HSTS/WAF</code>.</li>
+              <li>صور <code>WebP</code>، نشر تلقائي عبر <code>Hostinger Git</code>، وبناء <strong><bdi>5</bdi> أدوات حجز تفاعلية</strong>.</li>
+            </ul>
+          </div>
+
+          <div class="phase-card">
+            <div class="phase-card__hdr">
+              <span class="phase-badge" style="background:#0D9488;">المرحلة 2 (<bdi>Phase 2</bdi>)</span>
+              <span class="phase-date"><bdi>19 – 21</bdi> نوفمبر</span>
+            </div>
+            <strong style="font-size:0.84rem;color:var(--navy-900);">التتبع السحابي، كتالوج ميتا، المراجعات وفريق AI</strong>
+            <ul class="phase-list">
+              <li>نشر <code>First-Party Google Tag Gateway</code> (<code>/s-tm, /s-aw, /s-ga</code>) و<code>Consent Mode v2</code>.</li>
+              <li>ربط <code>GA4</code> و<code>Google Ads</code> و<code>Meta Pixel + CAPI v21.0</code>.</li>
+              <li>كتالوج ميتا (<strong><bdi>59</bdi> منتجاً</strong> في <bdi>6</bdi> مجموعات + <bdi>7</bdi> تخصيصات لغوية).</li>
+              <li>دمج مراجعات جوجل (<code>4.9★ / 3,082</code>) و<code>Tripadvisor</code>، مركز الأدلة <code>/guides</code> بـ <bdi>8</bdi> لغات، وتأسيس <strong>أيمن وحسام ولارا</strong>.</li>
+            </ul>
+          </div>
+
+          <div class="phase-card">
+            <div class="phase-card__hdr">
+              <span class="phase-badge" style="background:var(--amber-500);color:var(--navy-950);">المرحلة 3 (<bdi>Phase 3</bdi>)</span>
+              <span class="phase-date"><bdi>22</bdi> نوفمبر</span>
+            </div>
+            <strong style="font-size:0.84rem;color:var(--navy-900);">مزامنة الأسعار باليورو وإصلاح أهداف Google Ads</strong>
+            <ul class="phase-list">
+              <li>ربط جدول الأسعار الرئيسي (<strong><bdi>80</bdi> عنصراً باليورو</strong>) بـ Webhook التحديث اللحظي وتفريغ كاش <code>LiteSpeed</code>.</li>
+              <li>إصلاح منظومة التحويلات في حساب <code>Google Ads</code> (<code>365-126-5545</code>).</li>
+              <li>تنفيذ <strong><bdi>48/48 + 7/7</bdi> إجراءً</strong> (<code>AQ-01–AQ-55</code> بحالة <code>DONE</code>).</li>
+              <li>اعتماد جميع أهداف التحويل الـ <strong><bdi>14/14</bdi> بحالة <code>OK</code></strong>.</li>
+            </ul>
+          </div>
+
+          <div class="phase-card">
+            <div class="phase-card__hdr">
+              <span class="phase-badge" style="background:var(--coral-500);">المرحلة 4 (<bdi>Phase 4</bdi>)</span>
+              <span class="phase-date"><bdi>23 – 25</bdi> نوفمبر</span>
+            </div>
+            <strong style="font-size:0.84rem;color:var(--navy-900);">التكامل العابر للقنوات، واتساب الجوال، ERP ولارا</strong>
+            <ul class="phase-list">
+              <li>تفعيل كوكي <code>sc_attr</code> (<code>gclid + fbclid</code>) وتوحيد جداول التسويق والـ CRM.</li>
+              <li>تجهيز <bdi>4</bdi> حملات ميتا وجمهوري إعادة استهداف، وترقية سكربت جوجل إلى <code>v2.2</code> (<code>AQ-56–AQ-76</code>).</li>
+              <li>ترقية تجربة واتساب على الجوال (<code>.mobile-quick-bar</code>).</li>
+              <li>إطلاق <code>erp-app.php</code> وروابط البائعين، وتشغيل ويب هوك <strong>لارا <bdi>24/7</bdi> بـ <bdi>9</bdi> لغات</strong>.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide__foot">
+        <span>الجدول الزمني التنفيذي الشامل (<bdi>14 – 25 نوفمبر 2026</bdi>)</span>
+        <span>الشريحة <bdi>4</bdi> من <bdi>14</bdi></span>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SLIDE 5: PHASE 1 ENGINEERING, SECURITY, 8 LANGUAGES (800 URLS) & AEO
+         =================================================================== -->
+    <section class="slide" id="slide-5" data-slide-index="4">
+      <div class="slide__head">
+        <div>
+          <div class="slide__eyebrow">
+            <span class="slide__num-badge">05 / 14</span>
+            <span>المحور الثالث (أولاً) · البنية الهندسية للموقع المخصص والانتشار الدولي (<bdi>SEO &amp; AEO</bdi>)</span>
+          </div>
+          <h2 class="slide__title">معمارية <bdi>PHP 8</bdi> فائقة الأداء، <bdi>800</bdi> صفحة بـ <bdi>8</bdi> لغات، والظهور في محركات الذكاء الاصطناعي</h2>
+          <p class="slide__subtitle">استغناء كامل عن القوالب الثقيلة لصالح سرعة استجابة لحظية، تحصين أمني ثلاثي، وتغطية اختبارية بنسبة <bdi>100%</bdi></p>
+        </div>
+        <span class="slide__tag"><bdi>188</bdi> اختبار E2E ناجح</span>
+      </div>
+
+      <div class="slide__body">
+        <div class="grid-asymmetric">
+          <!-- Left: 8-Language 800 URLs Visual Chart + AEO -->
+          <div class="chart-card">
+            <h3 class="chart-card__title">🌍 التوزيع اللغوي والفهرسة الدولية: <bdi>8</bdi> لغات عالمية = <bdi>800</bdi> رابط مفهرس</h3>
+            <p class="chart-card__sub">كل سوق سياحي مستهدف في شرم الشيخ يمتلك واجهة كاملة ومفهرسة في <code>sitemap.xml</code> مع إغلاق الروابط الميتة بكود <code>410 Gone</code></p>
+
+            <svg class="svg-diagram" viewBox="0 0 620 250" role="img" aria-label="توزيع 800 رابط مفهرس عبر 8 لغات عالمية">
+              <!-- Center Donut Summary -->
+              <circle cx="130" cy="125" r="82" fill="none" stroke="#EAE5DA" stroke-width="26"/>
+              <circle cx="130" cy="125" r="82" fill="none" stroke="#0B1D2C" stroke-width="26" stroke-dasharray="64 451" stroke-dashoffset="0"/>
+              <circle cx="130" cy="125" r="82" fill="none" stroke="#0A84A8" stroke-width="26" stroke-dasharray="64 451" stroke-dashoffset="-64.4"/>
+              <circle cx="130" cy="125" r="82" fill="none" stroke="#1FA3C9" stroke-width="26" stroke-dasharray="64 451" stroke-dashoffset="-128.8"/>
+              <circle cx="130" cy="125" r="82" fill="none" stroke="#10B981" stroke-width="26" stroke-dasharray="64 451" stroke-dashoffset="-193.2"/>
+              <circle cx="130" cy="125" r="82" fill="none" stroke="#F28C28" stroke-width="26" stroke-dasharray="64 451" stroke-dashoffset="-257.6"/>
+              <circle cx="130" cy="125" r="82" fill="none" stroke="#E05A36" stroke-width="26" stroke-dasharray="64 451" stroke-dashoffset="-322"/>
+              <circle cx="130" cy="125" r="82" fill="none" stroke="#086A87" stroke-width="26" stroke-dasharray="64 451" stroke-dashoffset="-386.4"/>
+              <circle cx="130" cy="125" r="82" fill="none" stroke="#193E5C" stroke-width="26" stroke-dasharray="64 451" stroke-dashoffset="-450.8"/>
+              <text x="130" y="120" text-anchor="middle" font-family="Inter, sans-serif" font-size="28" font-weight="900" fill="#0B1D2C">800</text>
+              <text x="130" y="143" text-anchor="middle" font-family="Cairo, sans-serif" font-size="12" font-weight="800" fill="#5B6E7D">رابط مفهرس</text>
+
+              <!-- 8 Language Market Badges -->
+              <g font-family="Cairo, Inter, sans-serif" font-size="12.5" font-weight="700">
+                <rect x="255" y="18" width="170" height="44" rx="9" fill="#F6F4EF" stroke="#D8D1C2"/>
+                <text x="340" y="45" text-anchor="middle" fill="#0B1D2C">🇬🇧 الإنجليزية (en) · 100</text>
+
+                <rect x="438" y="18" width="170" height="44" rx="9" fill="#F6F4EF" stroke="#D8D1C2"/>
+                <text x="523" y="45" text-anchor="middle" fill="#0B1D2C">🇷🇺 الروسية (ru) · 100</text>
+
+                <rect x="255" y="72" width="170" height="44" rx="9" fill="#F6F4EF" stroke="#D8D1C2"/>
+                <text x="340" y="99" text-anchor="middle" fill="#0B1D2C">🇮🇹 الإيطالية (it) · 100</text>
+
+                <rect x="438" y="72" width="170" height="44" rx="9" fill="#F6F4EF" stroke="#D8D1C2"/>
+                <text x="523" y="99" text-anchor="middle" fill="#0B1D2C">🇵🇱 البولندية (pl) · 100</text>
+
+                <rect x="255" y="126" width="170" height="44" rx="9" fill="#F6F4EF" stroke="#D8D1C2"/>
+                <text x="340" y="153" text-anchor="middle" fill="#0B1D2C">🇩🇪 الألمانية (de) · 100</text>
+
+                <rect x="438" y="126" width="170" height="44" rx="9" fill="#F6F4EF" stroke="#D8D1C2"/>
+                <text x="523" y="153" text-anchor="middle" fill="#0B1D2C">🇫🇷 الفرنسية (fr) · 100</text>
+
+                <rect x="255" y="180" width="170" height="44" rx="9" fill="#E3F5FA" stroke="#0A84A8"/>
+                <text x="340" y="207" text-anchor="middle" fill="#086A87">🇪🇬 العربية (ar) · 100</text>
+
+                <rect x="438" y="180" width="170" height="44" rx="9" fill="#F6F4EF" stroke="#D8D1C2"/>
+                <text x="523" y="207" text-anchor="middle" fill="#0B1D2C">🇨🇳 الصينية (zh) · 100</text>
+              </g>
+            </svg>
+
+            <div class="panel panel--emerald" style="padding:0.7rem 0.95rem;">
+              <strong style="font-size:0.82rem;color:#065F46;">🤖 تهيئة محركات الإجابة الذكية (<bdi>AEO: llms.txt &amp; llms-full.txt</bdi>):</strong>
+              <p style="margin:0.2rem 0 0;font-size:0.76rem;color:#064E3B;">تغذية مباشرة لمحركات <code>ChatGPT</code> و<code>Perplexity</code> و<code>Google AI</code> ببيانات وأسعار وبرامج المركز الموثقة باليورو، ما حقق أول حجز يخت خاص بقيمة <strong><bdi>€900</bdi></strong> مجاناً.</p>
+            </div>
+          </div>
+
+          <!-- Right: Engineering, Security & QA Pillars -->
+          <div style="display:flex;flex-direction:column;gap:0.8rem;">
+            <div class="panel panel--white">
+              <h3 class="panel__title"><span class="icon-box">⚡</span> الأداء الفائق والنشر المستمر</h3>
+              <p style="margin:0;font-size:0.8rem;color:var(--ink-700);">
+                بناء كامل بـ <code>PHP 8</code> و<code>Vanilla JS/CSS</code> بدون أطر عمل متضخمة، ضغط الصور بصيغة <code>WebP</code> المتجاوبة، تخزين <code>LiteSpeed</code> الفوري (&lt; ثانية)، وربط المستودع <code>sea-college-website</code> بالنشر التلقائي عبر <code>Hostinger Git auto-deploy</code>.
+              </p>
+            </div>
+
+            <div class="panel panel--white">
+              <h3 class="panel__title"><span class="icon-box icon-box--coral">🛡️</span> التحصين الأمني وتنظيف الأرشفة</h3>
+              <p style="margin:0;font-size:0.8rem;color:var(--ink-700);">
+                حماية صارمة عبر سياسات أمان المحتوى <code>CSP</code>، تشفير النقل الصارم <code>HSTS</code>، وجدار حماية التطبيقات <code>WAF</code>، مع إصدار كود <code>410 Gone</code> لإزالة الروابط الميتة الموروثة من ووردبريس.
+              </p>
+            </div>
+
+            <div class="panel panel--navy" style="margin-top:auto;">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:0.8rem;">
+                <div>
+                  <div style="font-size:0.76rem;color:#8BE3FF;font-weight:800;">حزمة الاختبارات الآلية الشاملة (<bdi>E2E Suite</bdi>)</div>
+                  <div style="font-size:1.65rem;font-weight:900;font-family:var(--font-num);color:#6EE7B7;">188 / 188 PASSING</div>
+                  <div style="font-size:0.76rem;color:#D9EFF8;">فحص آلي مستمر لسلامة الصفحات واللغات الـ <bdi>8</bdi> ومسارات الحجز</div>
+                </div>
+                <div style="font-size:2.4rem;">✅</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide__foot">
+        <span>البنية الهندسية والأمنية وتهيئة <bdi>SEO / AEO</bdi> — المرحلة الأولى (<bdi>Phase 1</bdi>)</span>
+        <span>الشريحة <bdi>5</bdi> من <bdi>14</bdi></span>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SLIDE 6: THE 5 INTERACTIVE WEBSITE CONVERSION TOOLS
+         =================================================================== -->
+    <section class="slide slide--sand" id="slide-6" data-slide-index="5">
+      <div class="slide__head">
+        <div>
+          <div class="slide__eyebrow">
+            <span class="slide__num-badge">06 / 14</span>
+            <span>تجربة الزائر والتحويل · الأدوات التفاعلية الخمس على الموقع</span>
+          </div>
+          <h2 class="slide__title">خمس أدوات حجز وتخصيص تفاعلية تحوّل الزائر المتردد إلى حجز مؤكد باليورو</h2>
+          <p class="slide__subtitle">مصممة خصيصاً لسلوك السائح في شرم الشيخ على الهاتف المحمول بجميع اللغات الـ <bdi>8</bdi></p>
+        </div>
+        <span class="slide__tag">5 محركات تحويل حية</span>
+      </div>
+
+      <div class="slide__body">
+        <div class="grid-5">
+          <div class="panel panel--white" style="display:flex;flex-direction:column;gap:0.5rem;">
+            <span class="icon-box icon-box--navy">🧮</span>
+            <strong style="font-size:0.88rem;color:var(--navy-900);">1. حاسبة الأسعار التفاعلية</strong>
+            <code>/prices#calculator</code>
+            <p style="margin:0;font-size:0.77rem;color:var(--ink-700);">تتيح للزائر تركيب باقته الخاصة (رحلات + دورات + معدات) وحساب التكلفة الإجمالية باليورو (<bdi>EUR</bdi>) بشفافية فورية بدون رسوم خفية.</p>
+          </div>
+
+          <div class="panel panel--white" style="display:flex;flex-direction:column;gap:0.5rem;">
+            <span class="icon-box icon-box--amber">⏱️</span>
+            <strong style="font-size:0.88rem;color:var(--navy-900);">2. اختبار ترشيح الدورة في 30 ثانية</strong>
+            <code>30-Second Quiz</code>
+            <p style="margin:0;font-size:0.77rem;color:var(--ink-700);">يرشّح تلقائياً البرنامج أو دورة <bdi>PADI</bdi> الأنسب للزائر بناءً على مستوى خبرته السابقة وعدد أيام إقامته في شرم الشيخ.</p>
+          </div>
+
+          <div class="panel panel--white" style="display:flex;flex-direction:column;gap:0.5rem;">
+            <span class="icon-box icon-box--emerald">🚐</span>
+            <strong style="font-size:0.88rem;color:var(--navy-900);">3. فاحص مناطق التوصيل الفندقي</strong>
+            <code>6 مناطق · 75 فندقاً</code>
+            <p style="margin:0;font-size:0.77rem;color:var(--ink-700);">يغطي <strong><bdi>6</bdi> مناطق جغرافية و<bdi>75</bdi> فندقاً ومنتجعاً</strong> في شرم الشيخ لتأكيد خدمة الانتقالات المجانية للعميل فوراً.</p>
+          </div>
+
+          <div class="panel panel--white" style="display:flex;flex-direction:column;gap:0.5rem;">
+            <span class="icon-box icon-box--coral">🛒</span>
+            <strong style="font-size:0.88rem;color:var(--navy-900);">4. الحجز السريع وسلة المشتريات</strong>
+            <code>Quick-Book + Cart</code>
+            <p style="margin:0;font-size:0.77rem;color:var(--ink-700);">يختصر خطوات الطلب المباشر لأي رحلة بحرية أو دورة غوص مع احتساب تلقائي لعدد الغواصين والتاريخ والإجمالي باليورو.</p>
+          </div>
+
+          <div class="panel panel--white" style="display:flex;flex-direction:column;gap:0.5rem;">
+            <span class="icon-box">📋</span>
+            <strong style="font-size:0.88rem;color:var(--navy-900);">5. بوابة تسجيل الوصول في 60 ثانية</strong>
+            <code>/check-in</code>
+            <p style="margin:0;font-size:0.77rem;color:var(--ink-700);">تتيح للغواصين إرسال بياناتهم الشخصية ومقاسات معداتهم قبل الوصول إلى المركز لتسريع التجهيز الصباحي.</p>
+          </div>
+        </div>
+
+        <!-- Visual Evidence Strip with Real Sea College Assets -->
+        <div class="grid-3" style="margin-top:0.2rem;">
+          <div class="photo-card" style="aspect-ratio:16/8.2;border-color:var(--sand-300);">
+            <img src="./images/calculator.jpg" alt="حاسبة الأسعار باليورو بدون رسوم خفية" />
+            <div class="photo-card__cap">💶 شفافية تسعير فورية باليورو عبر حاسبة الباقات التفاعلية</div>
+          </div>
+          <div class="photo-card" style="aspect-ratio:16/8.2;border-color:var(--sand-300);">
+            <img src="./images/equipment.jpg" alt="غرفة تجهيز معدات الغوص في سي كوليدج" />
+            <div class="photo-card__cap">🤿 تجهيز مسبق لمقاسات المعدات عبر بوابة <code>/check-in</code></div>
+          </div>
+          <div class="photo-card" style="aspect-ratio:16/8.2;border-color:var(--sand-300);">
+            <img src="./images/happy-divers.jpg" alt="غواصون سعداء في البحر الأحمر مع سي كوليدج" />
+            <div class="photo-card__cap">🚐 تغطية مجانية لـ <bdi>75</bdi> فندقاً ومنتجعاً في <bdi>6</bdi> مناطق بشرم الشيخ</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide__foot">
+        <span>أدوات التحويل التفاعلية الخمس على الموقع الرسمي <bdi>seacollegediveclub.com</bdi></span>
+        <span>الشريحة <bdi>6</bdi> من <bdi>14</bdi></span>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SLIDE 7: FIRST-PARTY TRACKING, META CATALOG (59 ITEMS) & TRUST
+         =================================================================== -->
+    <section class="slide" id="slide-7" data-slide-index="6">
+      <div class="slide__head">
+        <div>
+          <div class="slide__eyebrow">
+            <span class="slide__num-badge">07 / 14</span>
+            <span>المحور الثالث (ثانياً) · منظومة التتبع من الطرف الأول وكتالوج ميتا وبناء الثقة (<bdi>Phase 2</bdi>)</span>
+          </div>
+          <h2 class="slide__title">إنهاء ضياع بيانات التحويل على <bdi>iOS/Safari</bdi> وربط كتالوج ميتا متعدد اللغات</h2>
+          <p class="slide__subtitle">بوابة تتبع محلية من الطرف الأول + واجهة خادم <bdi>Meta CAPI v21.0</bdi> + إبراز <bdi>3,220+</bdi> مراجعة موثقة</p>
+        </div>
+        <span class="slide__tag">حماية <bdi>100%</bdi> لبيانات الإحالة</span>
+      </div>
+
+      <div class="slide__body">
+        <!-- SVG First-Party Tracking Architecture Diagram -->
+        <div class="chart-card" style="background:var(--navy-950);color:var(--white);border-color:var(--navy-700);">
+          <h3 class="chart-card__title" style="color:#8BE3FF;">🛰️ مخطط البنية السحابية للتتبع من الطرف الأول (<bdi>First-Party Tracking Architecture</bdi>)</h3>
+          <svg class="svg-diagram" viewBox="0 0 1140 175" role="img" aria-label="مخطط تتبع الطرف الأول Google Tag Gateway و Meta CAPI v21.0">
+            <!-- Box 1: Visitor Click (Right) -->
+            <rect x="885" y="22" width="230" height="130" rx="14" fill="#132F46" stroke="#6CD4F5" stroke-width="1.8"/>
+            <text x="1000" y="54" text-anchor="middle" fill="#FFFFFF" font-family="Cairo, sans-serif" font-size="14" font-weight="800">📱 نقرة السائح (iOS / Android)</text>
+            <text x="1000" y="80" text-anchor="middle" fill="#9EE7FF" font-family="Inter, sans-serif" font-size="12" font-weight="700">gclid · fbclid · Consent v2</text>
+            <text x="1000" y="106" text-anchor="middle" fill="#6EE7B7" font-family="Cairo, sans-serif" font-size="12" font-weight="700">كوكي الإحالة متعدد اللمسات</text>
+            <text x="1000" y="130" text-anchor="middle" fill="#FDE68A" font-family="Inter, sans-serif" font-size="12" font-weight="800">Cookie: sc_attr</text>
+
+            <!-- Arrow 1 -->
+            <path d="M880 87H765" stroke="#1FA3C9" stroke-width="3.5" marker-end="url(#arr)"/>
+            <polygon points="768,80 754,87 768,94" fill="#1FA3C9"/>
+
+            <!-- Box 2: Local First-Party Gateway (Center) -->
+            <rect x="445" y="16" width="305" height="142" rx="14" fill="#173D5A" stroke="#F28C28" stroke-width="2.2"/>
+            <text x="597" y="48" text-anchor="middle" fill="#FFD199" font-family="Cairo, sans-serif" font-size="14.5" font-weight="800">🛡️ بوابة الطرف الأول على نطاق المركز</text>
+            <text x="597" y="74" text-anchor="middle" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="13" font-weight="800">Google Tag Gateway: /s-tm · /s-aw · /s-ga</text>
+            <text x="597" y="101" text-anchor="middle" fill="#D9EFF8" font-family="Cairo, sans-serif" font-size="12">يتجاوز حظر متصفحات Safari/iOS ومانعات الإعلانات</text>
+            <text x="597" y="128" text-anchor="middle" fill="#8BE3FF" font-family="Inter, sans-serif" font-size="12" font-weight="700">+ Server-Side Meta CAPI v21.0</text>
+
+            <!-- Arrow 2 -->
+            <line x1="440" y1="87" x2="345" y2="87" stroke="#10B981" stroke-width="3.5"/>
+            <polygon points="348,80 334,87 348,94" fill="#10B981"/>
+
+            <!-- Box 3: Ad & Analytics Destinations (Left) -->
+            <rect x="25" y="14" width="305" height="146" rx="14" fill="#0F2D25" stroke="#10B981" stroke-width="2"/>
+            <text x="177" y="42" text-anchor="middle" fill="#6EE7B7" font-family="Cairo, sans-serif" font-size="14" font-weight="800">🎯 المنصات الإعلانية والتحليلية المربوطة</text>
+            <text x="177" y="69" text-anchor="middle" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="12.5" font-weight="700">• GA4: G-99528RZN9Z</text>
+            <text x="177" y="94" text-anchor="middle" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="12.5" font-weight="700">• Google Ads: AW-16728866067</text>
+            <text x="177" y="119" text-anchor="middle" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="12.5" font-weight="700">• Meta Pixel: 2980406819004765</text>
+            <text x="177" y="143" text-anchor="middle" fill="#A7F3D0" font-family="Cairo, sans-serif" font-size="12" font-weight="700">+ سجل الـ CRM الموحد لحظياً</text>
+          </svg>
+        </div>
+
+        <div class="grid-2">
+          <!-- Meta Dynamic Catalog Card -->
+          <div class="panel panel--ocean">
+            <h3 class="panel__title"><span class="icon-box">🛍️</span> كتالوج منتجات ميتا الديناميكي متعدد اللغات</h3>
+            <ul class="phase-list" style="font-size:0.81rem;">
+              <li>معرّف الكتالوج الرسمي: <code>555610010235756</code> متصل بملف التغذية الحي <code>/feeds/meta-catalog.xml</code>.</li>
+              <li>إدراج <strong><bdi>59</bdi> منتجاً سياحياً ودورة غوص</strong> مصنفة بدقة داخل <strong><bdi>6</bdi> مجموعات منتجات (<bdi>6 Product Sets</bdi>)</strong>.</li>
+              <li>مدعوم بملفات تخصيص لغوي لـ <strong><bdi>7</bdi> لغات إضافية (<bdi>7-language overrides</bdi>)</strong> لعرض الإعلانات الديناميكية بلغة كل سائح وسعر اليورو الدقيق.</li>
+            </ul>
+          </div>
+
+          <!-- Social Proof & Guides Hub Card -->
+          <div class="panel panel--amber">
+            <h3 class="panel__title"><span class="icon-box icon-box--amber">⭐</span> عناصر الثقة الاجتماعية وموسوعة أدلة الغوص</h3>
+            <ul class="phase-list" style="font-size:0.81rem;">
+              <li>إبراز التقييم الرسمي على جوجل: <strong><bdi>4.9★</bdi> بعدد <bdi>3,082</bdi> مراجعة</strong> معروضة على الموقع — مع نمو الرصيد الحي على خرائط جوجل حالياً إلى <strong><bdi>3,220+</bdi> مراجعة</strong>.</li>
+              <li>ربط تقييم <code>Tripadvisor</code> الرسمي (<code>Location ID 26104236</code> بتقييم <strong><bdi>4.9</bdi></strong>).</li>
+              <li>إطلاق مركز أدلة الغوص في البحر الأحمر (<code>/guides</code>) بجميع اللغات الـ <strong><bdi>8</bdi></strong> لاستقطاب الباحثين مجاناً.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide__foot">
+        <span>منظومة التتبع من الطرف الأول وكتالوج ميتا وعناصر الثقة — المرحلة الثانية (<bdi>Phase 2</bdi>)</span>
+        <span>الشريحة <bdi>7</bdi> من <bdi>14</bdi></span>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SLIDE 8: 4 CONNECTED GOOGLE SHEETS, MOBILE WHATSAPP, ERP & LARA 24/7
+         =================================================================== -->
+    <section class="slide slide--sand" id="slide-8" data-slide-index="7">
+      <div class="slide__head">
+        <div>
+          <div class="slide__eyebrow">
+            <span class="slide__num-badge">08 / 14</span>
+            <span>المحور الثالث (ثالثاً) · أتمتة الأسعار والجداول الأربعة ونظام <bdi>ERP</bdi> وويب هوك لارا (<bdi>Phases 3 &amp; 4</bdi>)</span>
+          </div>
+          <h2 class="slide__title">أربعة جداول سحابية مترابطة، ترقية واتساب للجوال، بوابة البائعين، ولارا بـ <bdi>9</bdi> لغات</h2>
+          <p class="slide__subtitle">تحكم تجاري وتشغيلي كامل في الأسعار والإعلانات والعملاء والمناديب من مكان واحد بدون تدخل برمجي</p>
+        </div>
+        <span class="slide__tag">أتمتة سحابية شاملة</span>
+      </div>
+
+      <div class="slide__body">
+        <!-- 4 Connected Google Sheets Grid -->
+        <div class="grid-2">
+          <div class="panel panel--white">
+            <h3 class="panel__title"><span class="icon-box icon-box--emerald">💶</span> 1. جدول الأسعار الرئيسي والخصومات باليورو (<bdi>80</bdi> عنصراً)</h3>
+            <p style="margin:0;font-size:0.78rem;color:var(--ink-700);">
+              المعرّف: <code>1qFlbTo8EXccEZOt2zgmAP7bUjMVLJrPbSd9NqaVty4g</code> · متصل بـ <code>price_sync_webhook.php</code> مع تفريغ تلقائي لكاش <code>LiteSpeed</code> لتحديث الأسعار ونسب الخصم المئوية على الموقع وحاسبة الأسعار في اللحظة نفسها.
+            </p>
+          </div>
+
+          <div class="panel panel--white">
+            <h3 class="panel__title"><span class="icon-box icon-box--amber">📊</span> 2. مركز المزامنة الساعية لإعلانات جوجل (<bdi>Sync Hub</bdi>)</h3>
+            <p style="margin:0;font-size:0.78rem;color:var(--ink-700);">
+              المعرّف: <code>15IkDV14kxGAbr8DSGOB6auNe4paTNOa5UXmw9d5kVtk</code> · يدير سكربت <code>google_ads_sync_script.js (v2.2)</code> للحساب <code>365-126-5545</code> شاملاً التدقيق الجنائي للإنفاق اليومي وعبارات البحث لآخر <bdi>7</bdi> أيام.
+            </p>
+          </div>
+
+          <div class="panel panel--white">
+            <h3 class="panel__title"><span class="icon-box">🗂️</span> 3. سجل العملاء المحتملين الموحد (<bdi>CRM Sheet</bdi>)</h3>
+            <p style="margin:0;font-size:0.78rem;color:var(--ink-700);">
+              المعرّف: <code>1ItvQGWnrHwnSbyGDoGNtV2CkVwNJXIyU_aaIFxIOGbc</code> · يسجل تلقائياً كل طلب حجز أو رسالة واتساب أو تسجيل وصول <code>/check-in</code> مع معرّفات النقر الإعلاني (<code>gclid / fbclid</code>) عبر كوكي <code>sc_attr</code>.
+            </p>
+          </div>
+
+          <div class="panel panel--white">
+            <h3 class="panel__title"><span class="icon-box icon-box--coral">🔄</span> 4. جدول التكامل التسويقي العابر للقنوات</h3>
+            <p style="margin:0;font-size:0.78rem;color:var(--ink-700);">
+              المعرّف: <code>15vrkKvIO9dGbIKOOvHy2MtSf7uKViyvSq8PWb4EINMY</code> · يوحّد مؤشرات الأداء والجماهير المخصصة لإعادة الاستهداف بين منصتي <code>Google Ads</code> و<code>Meta Ads</code>.
+            </p>
+          </div>
+        </div>
+
+        <!-- 3 Operational Upgrades Strip -->
+        <div class="grid-3">
+          <div class="panel panel--emerald">
+            <strong style="font-size:0.85rem;color:#065F46;display:block;margin-bottom:0.3rem;">📱 ترقية واتساب للجوال (<bdi>Mobile UX Surge</bdi>)</strong>
+            <p style="margin:0;font-size:0.76rem;color:#064E3B;">
+              إطلاق الشريط السفلي الثابت <code>.mobile-quick-bar</code>، زر واتساب في الترويسة العلوية، وأزرار واتساب ذات الضغطة الواحدة داخل البطاقات محمّلة بقيمة الخدمة الديناميكية باليورو (<bdi>EUR</bdi>)، مع شريط كوكيز إقليمي غير حاجب للمحتوى.
+            </p>
+          </div>
+
+          <div class="panel panel--ocean">
+            <strong style="font-size:0.85rem;color:var(--navy-900);display:block;margin-bottom:0.3rem;">🏢 نظام الـ <bdi>ERP</bdi> وروابط البائعين والمناديب</strong>
+            <p style="margin:0;font-size:0.76rem;color:var(--ink-700);">
+              نشر تطبيق الإدارة المتكامل <code>erp-app.php</code> ومعالج حجوزات روابط البائعين وشركاء الفنادق <code>seller_link_booking.php</code> لرقمنة المبيعات الخارجية وربطها مباشرة بالعمليات.
+            </p>
+          </div>
+
+          <div class="panel panel--navy">
+            <strong style="font-size:0.85rem;color:#6EE7B7;display:block;margin-bottom:0.3rem;">🤖 ويب هوك لارا الحي <bdi>24/7</bdi> بـ <bdi>9</bdi> لغات</strong>
+            <p style="margin:0;font-size:0.76rem;color:#D9EFF8;">
+              يعمل عبر المسار الحي <code>/webhooks/meta-inbox</code> (<code>lara_meta_webhook.php</code> و<code>lara_meta_inbox.php</code>) للرد الفوري على صندوق ميتا وواتساب باستخدام رمز الوصول المؤمّن في <code>secrets.php</code>.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide__foot">
+        <span>منظومة الجداول السحابية الأربعة والتكامل التشغيلي — المرحلتان الثالثة والرابعة (<bdi>Phases 3 &amp; 4</bdi>)</span>
+        <span>الشريحة <bdi>8</bdi> من <bdi>14</bdi></span>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SLIDE 9: LIVE / DONE VS STAGED EXACT STATUS MATRIX
+         =================================================================== -->
+    <section class="slide" id="slide-9" data-slide-index="8">
+      <div class="slide__head">
+        <div>
+          <div class="slide__eyebrow">
+            <span class="slide__num-badge">09 / 14</span>
+            <span>المحور الثالث (رابعاً) · مصفوفة التمييز الدقيق للشفافية الحوكمية</span>
+          </div>
+          <h2 class="slide__title">ما هو مُفعّل بالوضع الحي (<bdi>LIVE / DONE</bdi>) مقابل ما هو مُجهّز للتفعيل الفوري (<bdi>STAGED</bdi>)</h2>
+          <p class="slide__subtitle"><bdi>5</bdi> منظومات أساسية تعمل بالوضع الحي بالكامل + حزمتان إعلانيتان متقدمتان جاهزتان للإطلاق بقرار الإدارة</p>
+        </div>
+
+        <div class="filter-bar no-print">
+          <button class="filter-btn is-active" onclick="filterMatrix('all', this)">الكل (7)</button>
+          <button class="filter-btn" onclick="filterMatrix('live', this)">مُفعّل LIVE (5)</button>
+          <button class="filter-btn" onclick="filterMatrix('staged', this)">مُجهّز STAGED (2)</button>
+        </div>
+      </div>
+
+      <div class="slide__body">
+        <div class="exec-table-wrap">
+          <table class="exec-table" id="status-matrix-table">
+            <thead>
+              <tr>
+                <th style="width:34%;">المكون / الحزمة التقنية أو التسويقية</th>
+                <th style="width:20%;">الحالة الحالية</th>
+                <th style="width:46%;">التفاصيل الدقيقة والمحددات التشغيلية</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-status="live">
+                <td><strong>1. الموقع المخصص بـ <bdi>8</bdi> لغات (<bdi>800</bdi> رابط) + الـ <bdi>5</bdi> أدوات التفاعلية + <bdi>188</bdi> اختبار <bdi>E2E</bdi></strong></td>
+                <td><span class="status-badge status-badge--live"><span class="status-dot"></span> مُفعّل بالوضع الحي (LIVE)</span></td>
+                <td>يعمل بالكامل على <code>https://seacollegediveclub.com</code> باستجابة فورية أقل من ثانية عبر <code>LiteSpeed</code>.</td>
+              </tr>
+              <tr data-status="live">
+                <td><strong>2. بوابة التتبع <code>Tag Gateway</code> + <code>GA4</code> + <code>Google Ads</code> + <code>Meta Pixel</code> + <code>CAPI v21.0</code> + كوكي <code>sc_attr</code></strong></td>
+                <td><span class="status-badge status-badge--live"><span class="status-dot"></span> مُفعّل بالوضع الحي (LIVE)</span></td>
+                <td>يلتقط التحويلات ومعرّفات <code>gclid</code> و<code>fbclid</code> ويرسلها لحظياً للخوادم وسجل الـ CRM.</td>
+              </tr>
+              <tr data-status="live">
+                <td><strong>3. مزامنة الأسعار والخصومات لـ <bdi>80</bdi> خدمة باليورو عبر <code>price_sync_webhook.php</code></strong></td>
+                <td><span class="status-badge status-badge--live"><span class="status-dot"></span> مُفعّل بالوضع الحي (LIVE)</span></td>
+                <td>أي تعديل في جدول الأسعار الرئيسي يُحدّث الموقع بجميع اللغات ويفرغ كاش <code>LiteSpeed</code> فوراً.</td>
+              </tr>
+              <tr data-status="live">
+                <td><strong>4. إصلاح أهداف وتحويلات <code>Google Ads</code> (<code>AQ-01</code> إلى <code>AQ-55</code>) + إعداد <code>Phone call lead</code></strong></td>
+                <td><span class="status-badge status-badge--live"><span class="status-dot"></span> مُنفّذ بالكامل (DONE / LIVE)</span></td>
+                <td>تم تنفيذ <strong><bdi>48/48 + 7/7</bdi> إجراءً</strong> بنجاح، وجميع صفوف التدقيق الـ <strong><bdi>14/14</bdi> بحالة <code>OK</code></strong> داخل الحساب <code>365-126-5545</code>.</td>
+              </tr>
+              <tr data-status="live">
+                <td><strong>5. تطبيق ميتا الرسمي (<code>App 1547970967215250</code>) + كتالوج ميتا (<bdi>59</bdi> منتجاً / <bdi>6</bdi> مجموعات) + ويب هوك لارا بـ <bdi>9</bdi> لغات + <code>erp-app.php</code></strong></td>
+                <td><span class="status-badge status-badge--live"><span class="status-dot"></span> مُفعّل بالوضع الحي (LIVE)</span></td>
+                <td>التطبيق منشور بالوضع الحي والرد الآلي يعمل <bdi>24/7</bdi> عبر رمز الوصول المخزن بأمان في <code>secrets.php</code>.</td>
+              </tr>
+              <tr data-status="staged">
+                <td><strong>6. حزمة تحسينات <code>Google Ads</code> المتقدمة (<code>AQ-56</code> إلى <code>AQ-76</code> + سكربت <code>v2.2</code>)</strong></td>
+                <td><span class="status-badge status-badge--staged"><span class="status-dot"></span> مُجهّزة للتفعيل الفوري (STAGED)</span></td>
+                <td>تشمل سقف ميزانية <strong><bdi>1,950 EGP/day</bdi></strong>، وسقف تكلفة تحويل مستهدف <strong><bdi>380 EGP</bdi> (<code>Target CPA</code>)</strong>، واستبعاد الكلمات المهدرة، وإضافة الكلمات الشرائية المطابقة — تعمل فور لصق سكربت <code>v2.2</code> في <code>Sea College Sync Hub</code>.</td>
+              </tr>
+              <tr data-status="staged">
+                <td><strong>7. هيكل حملات إعلانات ميتا (<bdi>4</bdi> حملات + <bdi>4</bdi> مجموعات إعلانية + <bdi>4</bdi> إعلانات إبداعية + <bdi>2</bdi> جمهورين مخصصين)</strong></td>
+                <td><span class="status-badge status-badge--staged"><span class="status-dot"></span> مُجهّزة للإطلاق الفوري (STAGED)</span></td>
+                <td>مُنشأة بالكامل داخل الحساب الإعلاني <code>act_1810425550247894</code> مع الجمهورين العابرين للقنوات (<code>SC_Google_Ads_Search_Clickers_30d</code> و<code>SC_High_Intent_Calculator_Checkout_14d</code>)، بانتظار ربط وسيلة الدفع واعتماد الإطلاق.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="slide__foot">
+        <span>مصفوفة الحوكمة والشفافية التشغيلية (<bdi>LIVE / DONE vs. STAGED</bdi>)</span>
+        <span>الشريحة <bdi>9</bdi> من <bdi>14</bdi></span>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SLIDE 10: 5 STRATEGIC, COMMERCIAL & OPERATIONAL BENEFITS
+         =================================================================== -->
+    <section class="slide slide--sand" id="slide-10" data-slide-index="9">
+      <div class="slide__head">
+        <div>
+          <div class="slide__eyebrow">
+            <span class="slide__num-badge">10 / 14</span>
+            <span>المحور الرابع · الفوائد الاستراتيجية والتجارية والتشغيلية المحققة</span>
+          </div>
+          <h2 class="slide__title">خمس مكاسب استراتيجية دائمة تعظّم ربحية المركز وتوقف هدر الميزانية الإعلانية</h2>
+          <p class="slide__subtitle">تحويل البنية الرقمية من مركز تكلفة صامت إلى أصل تجاري ذكي يولّد العملاء ويقيس العائد باليورو</p>
+        </div>
+        <span class="slide__tag">أثر تجاري مستدام</span>
+      </div>
+
+      <div class="slide__body">
+        <div class="grid-3">
+          <div class="panel panel--white">
+            <h3 class="panel__title"><span class="icon-box icon-box--coral">🎯</span> 1. استعادة الرؤية الكاملة للعائد الإعلاني</h3>
+            <p style="margin:0;font-size:0.79rem;color:var(--ink-700);">
+              بعد أن كان الموقع القديم أعمى عن تتبع نقرات واتساب (قناة الحجز الأولى للسياح في شرم الشيخ)، باتت كل ضغطة واتساب أو مكالمة أو حاسبة أسعار تحمل <strong>قيمة الخدمة ومعرّف النقر الإعلاني (<code>gclid / fbclid</code>)</strong> من النقرة الأولى حتى سجل الـ CRM.
+            </p>
+          </div>
+
+          <div class="panel panel--white">
+            <h3 class="panel__title"><span class="icon-box icon-box--emerald">🤖</span> 2. الريادة المبكرة في محركات الذكاء الاصطناعي (<bdi>AEO</bdi>)</h3>
+            <p style="margin:0;font-size:0.79rem;color:var(--ink-700);">
+              بفضل نشر <code>llms.txt</code> و<code>llms-full.txt</code> وهيكلة البيانات الواضحة لـ <bdi>800</bdi> صفحة بـ <bdi>8</bdi> لغات، يظهر المركز كإجابة موثوقة مباشرة داخل <code>ChatGPT</code>، وهو ما أثمر فعلياً عن <strong>عميل يخت خاص بقيمة <bdi>€900</bdi> بتكلفة إعلانية صفرية</strong>.
+            </p>
+          </div>
+
+          <div class="panel panel--white">
+            <h3 class="panel__title"><span class="icon-box icon-box--amber">💶</span> 3. مرونة تسعيرية وتجارية لحظية بدون مطورين</h3>
+            <p style="margin:0;font-size:0.79rem;color:var(--ink-700);">
+              تستطيع الإدارة تعديل أي سعر باليورو أو إطلاق خصم موسمي مئوي (<code>%</code>) على أي عنصر من العناصر الـ <strong><bdi>80</bdi></strong> مباشرة من <code>Google Sheets</code> لينعكس فوراً بجميع اللغات الثماني وحاسبة الأسعار.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-asymmetric-rev">
+          <div class="photo-card" style="aspect-ratio:16/8.6;border-color:var(--sand-300);">
+            <img src="./images/speedboat.jpg" alt="قارب سريع خاص إلى جزيرة تيران - سي كوليدج شرم الشيخ" />
+            <div class="photo-card__cap">🚤 جاهزية تسويقية وتشغيلية لرحلات تيران ورأس محمد واليخوت الخاصة</div>
+          </div>
+
+          <div class="grid-2">
+            <div class="panel panel--ocean">
+              <h3 class="panel__title"><span class="icon-box">📱</span> 4. مضاعفة معدل التحويل لمستخدمي الجوال</h3>
+              <p style="margin:0;font-size:0.79rem;color:var(--ink-700);">
+                أزالت ترقية واتساب المخصصة للهواتف المحمولة (<code>.mobile-quick-bar</code> والأزرار ذات الضغطة الواحدة المحمّلة بالسعر) حواجز التردد، مع إزالة حجب الشاشة من شريط الكوكيز الإقليمي.
+              </p>
+            </div>
+
+            <div class="panel panel--emerald">
+              <h3 class="panel__title"><span class="icon-box icon-box--emerald">💬</span> 5. استجابة <bdi>24/7</bdi> بـ <bdi>9</bdi> لغات ورقمنة المناديب</h3>
+              <p style="margin:0;font-size:0.79rem;color:var(--ink-700);">
+                تضمن <strong>لارا (<bdi>Lara</bdi>)</strong> عدم ضياع أي عميل يراسل الصفحة ليلاً أو بلغة أجنبية، بينما يفتح <code>erp-app.php</code> و<code>seller_link_booking.php</code> قناة مبيعات قابلة للقياس للمناديب وشركاء الفنادق.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide__foot">
+        <span>الفوائد الاستراتيجية والتجارية والتشغيلية المحققة لمركز <bdi>Sea College Dive Club</bdi></span>
+        <span>الشريحة <bdi>10</bdi> من <bdi>14</bdi></span>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SLIDE 11: MEASURABLE RESULTS PART 1 — GOOGLE ADS SURGE (FIRST 72 HOURS)
+         =================================================================== -->
+    <section class="slide" id="slide-11" data-slide-index="10">
+      <div class="slide__head">
+        <div>
+          <div class="slide__eyebrow">
+            <span class="slide__num-badge">11 / 14</span>
+            <span>المحور الخامس (أولاً) · النتائج الفعلية القابلة للقياس بالأرقام (<bdi>21 – 24 نوفمبر 2026</bdi>)</span>
+          </div>
+          <h2 class="slide__title">طفرة الأداء الإعلاني: تضاعف التحويلات الموثقة <bdi>4x (+300%)</bdi> خلال أول <bdi>72</bdi> ساعة</h2>
+          <p class="slide__subtitle">مقارنة مباشرة موثقة بين عهد <bdi>WordPress</bdi> القديم وأول <bdi>3</bdi> أيام فقط بعد تفعيل منظومة التتبع والأهداف الجديدة</p>
+        </div>
+        <span class="slide__tag"><bdi>Conv. Value = 4,732.61</bdi></span>
+      </div>
+
+      <div class="slide__body">
+        <div class="grid-2">
+          <!-- Chart 1: Verified Conversions Before vs First 72h -->
+          <div class="chart-card">
+            <h3 class="chart-card__title">📊 إجمالي التحويلات الموثقة في <bdi>Google Ads</bdi> (نمو <bdi>4x</bdi>)</h3>
+            <p class="chart-card__sub">من مكالمتين قديمتين فقط بلا تتبع واتساب إلى <bdi>8</bdi> تحويلات موثقة في <bdi>72</bdi> ساعة</p>
+
+            <svg class="svg-diagram" viewBox="0 0 540 230" role="img" aria-label="رسم بياني يقارن التحويلات الموثقة قبل وبعد التطوير">
+              <!-- Grid lines -->
+              <line x1="60" y1="190" x2="500" y2="190" stroke="#D8D1C2" stroke-width="1.5"/>
+              <line x1="60" y1="140" x2="500" y2="140" stroke="#EAE5DA" stroke-dasharray="4 4"/>
+              <line x1="60" y1="90" x2="500" y2="90" stroke="#EAE5DA" stroke-dasharray="4 4"/>
+              <line x1="60" y1="40" x2="500" y2="40" stroke="#EAE5DA" stroke-dasharray="4 4"/>
+
+              <!-- Bar 1: Old WordPress (2 conversions) -->
+              <rect x="330" y="152" width="105" height="38" rx="8" fill="#EF4444"/>
+              <text x="382" y="142" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" font-weight="900" fill="#991B1B">2 فقط</text>
+              <text x="382" y="212" text-anchor="middle" font-family="Cairo, sans-serif" font-size="12.5" font-weight="800" fill="#334656">قبل التطوير (WordPress)</text>
+
+              <!-- Bar 2: First 72 Hours Stacked (6 WhatsApp + 2 Calls = 8) -->
+              <rect x="125" y="152" width="115" height="38" rx="0" fill="#0A84A8"/>
+              <rect x="125" y="38" width="115" height="114" rx="8" fill="#10B981"/>
+              <text x="182" y="27" text-anchor="middle" font-family="Inter, sans-serif" font-size="20" font-weight="900" fill="#065F46">8 تحويلات (4x)</text>
+              <text x="182" y="100" text-anchor="middle" font-family="Cairo, sans-serif" font-size="12" font-weight="800" fill="#FFFFFF">6 WhatsApp (gclid)</text>
+              <text x="182" y="176" text-anchor="middle" font-family="Cairo, sans-serif" font-size="11.5" font-weight="800" fill="#FFFFFF">2 Call from Ads</text>
+              <text x="182" y="212" text-anchor="middle" font-family="Cairo, sans-serif" font-size="12.5" font-weight="800" fill="#065F46">أول 72 ساعة (21–24 نوفمبر)</text>
+
+              <!-- Growth Callout Badge -->
+              <rect x="255" y="55" width="105" height="42" rx="21" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5"/>
+              <text x="307" y="81" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="900" fill="#92400E">+300% ↑</text>
+            </svg>
+          </div>
+
+          <!-- Chart 2: Historical CPA vs Target CPA Cap (RTL-Safe Flexbox Bar Chart) -->
+          <div class="chart-card" style="justify-content:space-between;">
+            <div>
+              <h3 class="chart-card__title">📉 تكلفة التحويل التاريخية مقابل السقف المستهدف (<bdi>Target CPA</bdi>)</h3>
+              <p class="chart-card__sub" style="margin-top:0.15rem;">ضبط جذري للهدر الإعلاني ضمن حزمة <code>AQ-56–AQ-76</code> وسقف ميزانية <code>1,950 EGP/day</code></p>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:0.85rem;margin:0.35rem 0;">
+              <div>
+                <div style="display:flex;justify-content:space-between;align-items:center;font-size:0.8rem;font-weight:800;color:#991B1B;margin-bottom:0.3rem;">
+                  <span>❌ التكلفة التاريخية السابقة للتحويل الواحد (<bdi>WordPress</bdi>):</span>
+                  <bdi style="font-size:0.95rem;font-weight:900;">~18,345 EGP</bdi>
+                </div>
+                <div style="height:34px;border-radius:9px;background:#DC2626;display:flex;align-items:center;justify-content:center;color:#FFF;font-weight:900;font-size:0.86rem;">
+                  <bdi>~18,345 EGP / Conversion (هدر إعلاني مرتفع)</bdi>
+                </div>
+              </div>
+
+              <div>
+                <div style="display:flex;justify-content:space-between;align-items:center;font-size:0.8rem;font-weight:800;color:#065F46;margin-bottom:0.3rem;">
+                  <span>✅ السقف المستهدف الجديد (<bdi>Target CPA — AQ-56–76</bdi>):</span>
+                  <bdi style="font-size:0.95rem;font-weight:900;">380 EGP (-97.9%)</bdi>
+                </div>
+                <div style="height:34px;border-radius:9px;background:#ECFDF5;border:1.5px solid #6EE7B7;display:flex;align-items:center;overflow:hidden;">
+                  <div style="width:8%;height:100%;background:#059669;border-radius:7px;"></div>
+                  <span style="padding:0 0.75rem;font-size:0.82rem;font-weight:900;color:#065F46;">سقف مستهدف <bdi>380 EGP</bdi> — خفض جذري مستهدف للهدر بنسبة <bdi>97.9%</bdi></span>
+                </div>
+              </div>
+            </div>
+
+            <div style="background:#F1FAFD;border:1px solid #BBE3F0;border-radius:9px;padding:0.45rem 0.75rem;font-size:0.76rem;font-weight:800;color:#086A87;">
+              🛡️ سقف أمان الإنفاق اليومي: <bdi>1,950 EGP/day</bdi> · ربط <bdi>gclid</bdi> عبر واتساب بنسبة <bdi>100%</bdi>
+            </div>
+          </div>
+        </div>
+
+        <!-- Summary Comparison Mini-Table -->
+        <div class="exec-table-wrap">
+          <table class="exec-table">
+            <thead>
+              <tr>
+                <th>المعيار الإعلاني</th>
+                <th>قبل التطوير (<bdi>WordPress</bdi> القديم)</th>
+                <th>خلال أول <bdi>72</bdi> ساعة (<bdi>21 – 24 نوفمبر</bdi>)</th>
+                <th>نسبة / حجم التحسن الموثق</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>إجمالي التحويلات وقيمتها</strong></td>
+                <td class="cell-old"><bdi>2</bdi> مكالمة قديمة فقط · قيمة واتساب غير متتبعة</td>
+                <td class="cell-new"><strong><bdi>8</bdi> تحويلات موثقة</strong> (<bdi>6 WhatsApp + 2 Calls</bdi>) بقيمة <code>Conv. Value = 4,732.61</code></td>
+                <td class="cell-impact">تضاعف <bdi>4x (+300%)</bdi> وتفعيل التقييم القيمي لأول مرة</td>
+              </tr>
+              <tr>
+                <td><strong>تتبع <code>gclid</code> عبر واتساب</strong></td>
+                <td class="cell-old"><bdi>0</bdi> (انعدام كامل للربط)</td>
+                <td class="cell-new"><strong><bdi>6</bdi> عملاء واتساب موثقين بمعرّف <code>gclid</code></strong></td>
+                <td class="cell-impact">ربط مباشر بنسبة <bdi>100%</bdi> بين الإعلان والمحادثة</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="slide__foot">
+        <span>النتائج الفعلية الموثقة في <bdi>Google Ads (Account 365-126-5545)</bdi> خلال أول <bdi>72</bdi> ساعة</span>
+        <span>الشريحة <bdi>11</bdi> من <bdi>14</bdi></span>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SLIDE 12: MEASURABLE RESULTS PART 2 — 16 VERIFIED CRM LEADS & EUR BASKETS
+         =================================================================== -->
+    <section class="slide slide--sand" id="slide-12" data-slide-index="11">
+      <div class="slide__head">
+        <div>
+          <div class="slide__eyebrow">
+            <span class="slide__num-badge">12 / 14</span>
+            <span>المحور الخامس (ثانياً) · تشريح الـ <bdi>16</bdi> عميلاً محتملاً الفعليين في سجل الـ <bdi>CRM</bdi> الحي</span>
+          </div>
+          <h2 class="slide__title">تدفق طلبات حقيقية عالية القيمة باليورو من إعلانات جوجل والبحث الطبيعي و <bdi>ChatGPT</bdi></h2>
+          <p class="slide__subtitle">مسجلون فعلياً داخل سجل العملاء الموحد (<code>1ItvQGWnrHwnSbyGDoGNtV2CkVwNJXIyU_aaIFxIOGbc</code>)</p>
+        </div>
+        <span class="slide__tag"><bdi>16</bdi> عميلاً موثقاً</span>
+      </div>
+
+      <div class="slide__body">
+        <div class="grid-2">
+          <!-- Chart 3: Source Split of 16 Real CRM Leads (Centered SVG Donut + Clean RTL Legend Cards) -->
+          <div class="chart-card">
+            <h3 class="chart-card__title">🧲 توزيع مصادر الـ <bdi>16</bdi> عميلاً محتملاً في سجل الـ <bdi>CRM</bdi></h3>
+            <p class="chart-card__sub" style="margin-top:0.1rem;">توازن صحي بين الإعلانات الممولة المربوطة بـ <code>gclid</code> والقنوات المجانية والذكاء الاصطناعي</p>
+
+            <div style="display:grid;grid-template-columns:185px 1fr;gap:1rem;align-items:center;margin-top:0.35rem;">
+              <svg viewBox="0 0 210 210" style="width:185px;height:185px;display:block;margin:0 auto;" role="img" aria-label="حلقة توزيع 16 عميلاً">
+                <circle cx="105" cy="105" r="72" fill="none" stroke="#0A84A8" stroke-width="28" stroke-dasharray="282.7 452.4" stroke-dashoffset="0"/>
+                <circle cx="105" cy="105" r="72" fill="none" stroke="#E05A36" stroke-width="28" stroke-dasharray="169.6 452.4" stroke-dashoffset="-282.7"/>
+                <text x="105" y="101" text-anchor="middle" font-family="Inter, sans-serif" font-size="32" font-weight="900" fill="#0B1D2C">16</text>
+                <text x="105" y="125" text-anchor="middle" font-family="Cairo, sans-serif" font-size="13" font-weight="800" fill="#5B6E7D">عميلاً حقيقياً</text>
+              </svg>
+
+              <div style="display:flex;flex-direction:column;gap:0.7rem;">
+                <div style="background:#FFF5F2;border:1px solid #F8C6B7;border-radius:12px;padding:0.7rem 0.85rem;">
+                  <div style="display:flex;align-items:center;justify-content:space-between;gap:0.4rem;margin-bottom:0.2rem;">
+                    <strong style="font-size:0.84rem;color:#9A3412;">🎯 إعلانات جوجل (<bdi>Google Ads</bdi>)</strong>
+                    <bdi style="font-weight:900;font-size:0.86rem;color:#C94A28;">6 (37.5%)</bdi>
+                  </div>
+                  <div style="font-size:0.75rem;color:#7C2D12;font-weight:600;">استفسارات وطلبات حجز عبر واتساب مربوطة مباشرة بمعرّف النقر <code>gclid</code>.</div>
+                </div>
+
+                <div style="background:#F1FAFD;border:1px solid #BBE3F0;border-radius:12px;padding:0.7rem 0.85rem;">
+                  <div style="display:flex;align-items:center;justify-content:space-between;gap:0.4rem;margin-bottom:0.2rem;">
+                    <strong style="font-size:0.84rem;color:#086A87;">🤖 قنوات مجانية و <bdi>ChatGPT</bdi></strong>
+                    <bdi style="font-weight:900;font-size:0.86rem;color:#086A87;">10 (62.5%)</bdi>
+                  </div>
+                  <div style="font-size:0.75rem;color:#0F1E2B;font-weight:600;">بحث طبيعي ومباشر و<code>chatgpt.com</code> + تسجيلات وصول مسبق مكتملة عبر <code>/check-in</code>.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chart 4: Highlighted High-Ticket EUR Orders (RTL-Safe Horizontal Bars) -->
+          <div class="chart-card">
+            <h3 class="chart-card__title">💶 أبرز الطلبات النوعية عالية السلة الشرائية باليورو (<bdi>EUR</bdi>)</h3>
+            <p class="chart-card__sub" style="margin-top:0.1rem;">عائد تجاري مباشر يثبت جودة الزوار الجدد وفعالية تهيئة الذكاء الاصطناعي (<bdi>AEO</bdi>)</p>
+
+            <div style="display:flex;flex-direction:column;gap:0.62rem;margin-top:0.25rem;">
+              <!-- Item 1: €900 -->
+              <div style="background:#0B1D2C;border-radius:10px;padding:0.52rem 0.8rem;color:#FFF;">
+                <div style="display:flex;justify-content:space-between;align-items:center;font-size:0.8rem;font-weight:800;margin-bottom:0.28rem;">
+                  <span>🚤 يخت خاص (<bdi>Private Boat</bdi>) — مباشر من <code>chatgpt.com</code> (<bdi>23 Nov</bdi>)</span>
+                  <bdi style="font-size:0.98rem;font-weight:900;color:#6EE7B7;">€900</bdi>
+                </div>
+                <div style="height:8px;border-radius:99px;background:rgba(255,255,255,0.14);overflow:hidden;">
+                  <div style="width:100%;height:100%;background:#10B981;border-radius:99px;"></div>
+                </div>
+              </div>
+
+              <!-- Item 2: €400 -->
+              <div style="background:var(--sand-50);border:1px solid var(--sand-200);border-radius:10px;padding:0.48rem 0.8rem;">
+                <div style="display:flex;justify-content:space-between;align-items:center;font-size:0.8rem;font-weight:800;color:var(--navy-900);margin-bottom:0.25rem;">
+                  <span>🤿 دورة غوص المياه المفتوحة (<bdi>PADI Open Water Course</bdi>)</span>
+                  <bdi style="font-size:0.95rem;font-weight:900;color:#086A87;">€400</bdi>
+                </div>
+                <div style="height:8px;border-radius:99px;background:var(--sand-200);overflow:hidden;">
+                  <div style="width:45%;height:100%;background:#0A84A8;border-radius:99px;"></div>
+                </div>
+              </div>
+
+              <!-- Item 3: €255 -->
+              <div style="background:var(--sand-50);border:1px solid var(--sand-200);border-radius:10px;padding:0.48rem 0.8rem;">
+                <div style="display:flex;justify-content:space-between;align-items:center;font-size:0.8rem;font-weight:800;color:var(--navy-900);margin-bottom:0.25rem;">
+                  <span>🌊 باقة <bdi>6</bdi> غطسات (<bdi>6-Dive Pack</bdi>)</span>
+                  <bdi style="font-size:0.95rem;font-weight:900;color:#B45309;">€255</bdi>
+                </div>
+                <div style="height:8px;border-radius:99px;background:var(--sand-200);overflow:hidden;">
+                  <div style="width:29%;height:100%;background:#F28C28;border-radius:99px;"></div>
+                </div>
+              </div>
+
+              <!-- Item 4: €100 -->
+              <div style="background:var(--sand-50);border:1px solid var(--sand-200);border-radius:10px;padding:0.48rem 0.8rem;">
+                <div style="display:flex;justify-content:space-between;align-items:center;font-size:0.8rem;font-weight:800;color:var(--navy-900);margin-bottom:0.25rem;">
+                  <span>⚓ غطسة تمهيدية للمبتدئين من القارب (<bdi>Boat Intro DSD</bdi>) + <code>/check-in</code></span>
+                  <bdi style="font-size:0.95rem;font-weight:900;color:#C94A28;">€100</bdi>
+                </div>
+                <div style="height:8px;border-radius:99px;background:var(--sand-200);overflow:hidden;">
+                  <div style="width:14%;height:100%;background:#E05A36;border-radius:99px;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel--navy" style="padding:0.75rem 1.1rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0.75rem;">
+          <div style="font-size:0.84rem;font-weight:700;color:#E7F7FD;">
+            🏆 <strong>إنجاز استثنائي موثق بتاريخ <bdi>23 نوفمبر 2026</bdi>:</strong> استقطاب أول طلب يخت خاص بقيمة <strong><bdi>€900</bdi></strong> قادم مباشرة من <code>chatgpt.com</code> كثمرة فورية لملفي <code>llms.txt</code> و<code>llms-full.txt</code> بدون أي تكلفة إعلانية!
+          </div>
+          <span class="status-badge status-badge--live">موثق في CRM Sheet</span>
+        </div>
+      </div>
+
+      <div class="slide__foot">
+        <span>تفصيل الـ <bdi>16</bdi> عميلاً محتملاً الفعليين وقيمة السلات باليورو في سجل الـ <bdi>CRM</bdi></span>
+        <span>الشريحة <bdi>12</bdi> من <bdi>14</bdi></span>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SLIDE 13: 1-90 DAY GROWTH ROADMAP (ALL 12 INITIATIVES)
+         =================================================================== -->
+    <section class="slide" id="slide-13" data-slide-index="12">
+      <div class="slide__head">
+        <div>
+          <div class="slide__eyebrow">
+            <span class="slide__num-badge">13 / 14</span>
+            <span>المحور السادس · التوصيات وخطة العمل المستقبلية لمضاعفة الحجوزات (<bdi>خطة 1 – 90 يوماً</bdi>)</span>
+          </div>
+          <h2 class="slide__title">خارطة طريق من <bdi>12</bdi> مبادرة عبر <bdi>3</bdi> مراحل زمنية لتعظيم التحصيل الإلكتروني والسيطرة السوقية</h2>
+          <p class="slide__subtitle">من حصد المكاسب الجاهزة هذا الأسبوع إلى التحصيل الإلكتروني باليورو وبوابة الشركاء بالرمز المربع</p>
+        </div>
+        <span class="slide__tag">12 مبادرة استراتيجية</span>
+      </div>
+
+      <div class="slide__body">
+        <div class="grid-3">
+          <!-- Horizon 1: Days 1 - 7 -->
+          <div class="roadmap-col" style="border-top:4px solid var(--coral-500);">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <strong style="font-size:0.9rem;color:var(--coral-600);">🔥 المرحلة الأولى: الأيام <bdi>1 – 7</bdi></strong>
+              <span class="mini-chip">المدى العاجل</span>
+            </div>
+
+            <div class="roadmap-item">
+              <span class="roadmap-num" style="background:var(--coral-500);">1</span>
+              <div>
+                <h4 class="roadmap-item__title">تفعيل الحزم الإعلانية (<bdi>STAGED → LIVE</bdi>)</h4>
+                <p class="roadmap-item__desc">لصق سكربت <code>v2.2</code> (<code>AQ-56–76</code>: سقف <code>1,950 EGP/day</code> و<code>380 EGP CPA</code>) وربط الدفع لإطلاق حملات <code>Meta Ads</code> الأربع (<code>act_1810425550247894</code>).</p>
+              </div>
+            </div>
+
+            <div class="roadmap-item">
+              <span class="roadmap-num" style="background:var(--coral-500);">2</span>
+              <div>
+                <h4 class="roadmap-item__title">توحيد روابط <code>.php</code> وتنظيف مخلفات ووردبريس</h4>
+                <p class="roadmap-item__desc">تحويلات <code>301</code> (مثل <code>/prices.php → /prices</code>) وإزالة روابط عصر ووردبريس والخطأ الإملائي <code>"Sea Collage"</code> من <code>Search Console</code> (<code>/boats/, /one-day-trip/, /packages-offers/, /product/...</code>).</p>
+              </div>
+            </div>
+
+            <div class="roadmap-item">
+              <span class="roadmap-num" style="background:var(--coral-500);">3</span>
+              <div>
+                <h4 class="roadmap-item__title">خيار "متواجد حالياً في شرم / حجز &lt;<bdi>72</bdi> ساعة"</h4>
+                <p class="roadmap-item__desc">مفتاح ذكي يحوّل رحلات الغد وبعد الغد لنزلاء الفنادق إلى تأكيد مقاعد فوري عبر واتساب مع حفظ القيمة ومعرّف الإعلان.</p>
+              </div>
+            </div>
+
+            <div class="roadmap-item">
+              <span class="roadmap-num" style="background:var(--coral-500);">4</span>
+              <div>
+                <h4 class="roadmap-item__title">مزامنة آلية لعداد مراجعات جوجل</h4>
+                <p class="roadmap-item__desc">مواكبة الرصيد الحي الذي ارتفع من <code>3,082</code> إلى <strong><bdi>3,220+</bdi> مراجعة بتقييم <bdi>4.9★</bdi></strong>.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Horizon 2: Days 8 - 30 -->
+          <div class="roadmap-col" style="border-top:4px solid var(--ocean-500);">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <strong style="font-size:0.9rem;color:var(--ocean-600);">💳 المرحلة الثانية: الأيام <bdi>8 – 30</bdi></strong>
+              <span class="mini-chip">التحصيل والتوافر</span>
+            </div>
+
+            <div class="roadmap-item">
+              <span class="roadmap-num" style="background:var(--ocean-500);">5</span>
+              <div>
+                <h4 class="roadmap-item__title">عربون إلكتروني <bdi>20%</bdi> باليورو (<bdi>Deposit Checkout</bdi>)</h4>
+                <p class="roadmap-item__desc">دمج <code>Paymob</code> أو <code>Stripe</code> (<code>Apple Pay / Google Pay</code>) في <code>Quick-Book</code> وحاسبة الأسعار وروابط البائعين لتقليص <code>No-Shows</code> مع بقاء خيار واتساب.</p>
+              </div>
+            </div>
+
+            <div class="roadmap-item">
+              <span class="roadmap-num" style="background:var(--ocean-500);">6</span>
+              <div>
+                <h4 class="roadmap-item__title">إغلاق حلقة قياس الإيراد الفعلي (<bdi>Closed-Loop</bdi>)</h4>
+                <p class="roadmap-item__desc">إعادة إرسال المبيعات المحصلة فعلياً (<code>Paid</code>) باليورو من الـ CRM إلى <code>Google Ads Data Manager</code> عبر <code>gclid</code> وإلى <code>Meta CAPI v21.0</code>.</p>
+              </div>
+            </div>
+
+            <div class="roadmap-item">
+              <span class="roadmap-num" style="background:var(--ocean-500);">7</span>
+              <div>
+                <h4 class="roadmap-item__title">ودجت التوافر اللحظي لمقاعد القوارب</h4>
+                <p class="roadmap-item__desc">عرض المقاعد المتبقية لرحلات رأس محمد وتيران وحطام <code>SS Thistlegorm</code> مباشرة من <code>Google Sheets / erp-app.php</code>.</p>
+              </div>
+            </div>
+
+            <div class="roadmap-item">
+              <span class="roadmap-num" style="background:var(--ocean-500);">8</span>
+              <div>
+                <h4 class="roadmap-item__title">ربط <code>/check-in</code> بكشوف القوارب اليومية</h4>
+                <p class="roadmap-item__desc">ترحيل مقاسات المعدات والإقرارات الطبية تلقائياً إلى كشوف <code>Boat Manifests</code> داخل <code>erp-app.php</code> لتقليص انتظار الصباح.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Horizon 3: Days 31 - 90 -->
+          <div class="roadmap-col" style="border-top:4px solid var(--emerald-600);">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <strong style="font-size:0.9rem;color:var(--emerald-600);">🚀 المرحلة الثالثة: الأيام <bdi>31 – 90</bdi></strong>
+              <span class="mini-chip">التوسع الاستراتيجي</span>
+            </div>
+
+            <div class="roadmap-item">
+              <span class="roadmap-num" style="background:var(--emerald-600);">9</span>
+              <div>
+                <h4 class="roadmap-item__title">أطلس مواقع الغوص والحطام بـ <bdi>8</bdi> لغات</h4>
+                <p class="roadmap-item__desc">صفحات متعمقة لـ <code>SS Thistlegorm</code> ورأس محمد وتيران (أعماق وتيارات ورؤية) وتوسيع <code>llms-full.txt v2</code> لمضاعفة حجوزات <code>ChatGPT</code>.</p>
+              </div>
+            </div>
+
+            <div class="roadmap-item">
+              <span class="roadmap-num" style="background:var(--emerald-600);">10</span>
+              <div>
+                <h4 class="roadmap-item__title">مقاطع فيديو عمودية تحت الماء (<bdi>Video Reels</bdi>)</h4>
+                <p class="roadmap-item__desc">تضمين مقاطع سريعة التحميل ببيانات منظمة (<code>VideoObject Schema</code>) داخل صفحات الدورات واليخوت الخاصة.</p>
+              </div>
+            </div>
+
+            <div class="roadmap-item">
+              <span class="roadmap-num" style="background:var(--emerald-600);">11</span>
+              <div>
+                <h4 class="roadmap-item__title">أتمتة التقييمات والترقية البيعية عبر لارا</h4>
+                <p class="roadmap-item__desc">رسائل متابعة لطلب تقييم مصور على <code>Google</code> و<code>Tripadvisor</code>، وعروض ترقية أثناء الرحلة (<code>OWD → AOWD</code> أو <code>Nitrox</code>).</p>
+              </div>
+            </div>
+
+            <div class="roadmap-item">
+              <span class="roadmap-num" style="background:var(--emerald-600);">12</span>
+              <div>
+                <h4 class="roadmap-item__title">بوابة الشركاء ومناديب الفنادق بالرمز المربع</h4>
+                <p class="roadmap-item__desc">إطلاق <code>erp-app.php v2</code> لتوليد بطاقات وروابط حجز بـ <code>QR Code</code> لكل شريك وفندق مع لوحة شفافة للحجوزات والعمولات.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide__foot">
+        <span>خطة العمل المستقبلية (<bdi>1 – 90</bdi> يوماً) — <bdi>12</bdi> مبادرة لمضاعفة الحجوزات والإيرادات</span>
+        <span>الشريحة <bdi>13</bdi> من <bdi>14</bdi></span>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SLIDE 14: THIS WEEK'S 4 IMMEDIATE EXECUTIVE DECISIONS
+         =================================================================== -->
+    <section class="slide slide--dark" id="slide-14" data-slide-index="13">
+      <div class="slide__head">
+        <div>
+          <div class="slide__eyebrow">
+            <span class="slide__num-badge">14 / 14</span>
+            <span>المحور السابع · قائمة القرارات التنفيذية الفورية للإدارة والملاك هذا الأسبوع</span>
+          </div>
+          <h2 class="slide__title">أربعة قرارات تنفيذية سريعة لتحويل الجاهزية التقنية إلى تدفق مضاعف من الحجوزات</h2>
+          <p class="slide__subtitle">يمكن للملاك تحديد القرارات المعتمدة أدناه وإرسال التوجيه التنفيذي مباشرة لفريق العمل بضغطة زر</p>
+        </div>
+        <span class="slide__tag">اعتماد الإدارة العليا</span>
+      </div>
+
+      <div class="slide__body">
+        <div class="grid-2">
+          <!-- Decision 1 -->
+          <label class="decision-card" id="dec-card-1">
+            <input type="checkbox" class="decision-check" checked onchange="toggleDecision(1, this)" />
+            <div>
+              <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.25rem;">
+                <span class="status-badge status-badge--staged">⚡ فوري — اليوم</span>
+                <strong style="color:var(--navy-900);font-size:0.92rem;">القرار 1: التسويق الممول وإطلاق الحملات الجاهزة</strong>
+              </div>
+              <p style="margin:0;font-size:0.8rem;color:var(--ink-700);">
+                لصق وتشغيل سكربت <code>google_ads_sync_script.js (v2.2)</code> لتفعيل الحزمة <code>AQ-56–AQ-76</code> (سقف <code>1,950 EGP/day</code> و<code>380 EGP Target CPA</code>)، وربط بطاقة الدفع لإطلاق الحملات الأربع المُجهّزة على <code>Meta Ads</code>.
+              </p>
+            </div>
+          </label>
+
+          <!-- Decision 2 -->
+          <label class="decision-card" id="dec-card-2">
+            <input type="checkbox" class="decision-check" checked onchange="toggleDecision(2, this)" />
+            <div>
+              <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.25rem;">
+                <span class="status-badge status-badge--live">⏱️ خلال 48 ساعة</span>
+                <strong style="color:var(--navy-900);font-size:0.92rem;">القرار 2: الأرشفة والـ SEO ومزامنة عداد المراجعات</strong>
+              </div>
+              <p style="margin:0;font-size:0.8rem;color:var(--ink-700);">
+                تكليف <strong>أيمن (<bdi>Ayman</bdi>)</strong> بتطبيق تحويلات <code>301</code> للروابط المكررة بامتداد <code>.php</code>، ومزامنة عداد مراجعات جوجل على الموقع إلى <strong><bdi>3,220+</bdi> مراجعة (<bdi>4.9★</bdi>)</strong>.
+              </p>
+            </div>
+          </label>
+
+          <!-- Decision 3 -->
+          <label class="decision-card" id="dec-card-3">
+            <input type="checkbox" class="decision-check" checked onchange="toggleDecision(3, this)" />
+            <div>
+              <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.25rem;">
+                <span class="status-badge status-badge--live">📅 هذا الأسبوع</span>
+                <strong style="color:var(--navy-900);font-size:0.92rem;">القرار 3: تحويل حجوزات اللحظة الأخيرة في شرم الشيخ</strong>
+              </div>
+              <p style="margin:0;font-size:0.8rem;color:var(--ink-700);">
+                اعتماد تفعيل زر <strong>"متواجد حالياً في شرم الشيخ (<bdi>&lt;72h Express Booking</bdi>)"</strong> لالتقاط حجوزات اليوم التالي وبعد الغد من نزلاء الفنادق فوراً عبر واتساب.
+              </p>
+            </div>
+          </label>
+
+          <!-- Decision 4 -->
+          <label class="decision-card" id="dec-card-4">
+            <input type="checkbox" class="decision-check" checked onchange="toggleDecision(4, this)" />
+            <div>
+              <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.25rem;">
+                <span class="status-badge status-badge--staged">💳 الأسبوع القادم</span>
+                <strong style="color:var(--navy-900);font-size:0.92rem;">القرار 4: اختيار بوابة الدفع لعربون الـ <bdi>20% EUR</bdi></strong>
+              </div>
+              <p style="margin:0;font-size:0.8rem;color:var(--ink-700);">
+                اختيار بوابة التحصيل المفضلة (<strong><code>Paymob</code></strong> أو <strong><code>Stripe</code></strong>) لبدء ربط عربون الحجز الإلكتروني بنسبة <strong><bdi>20%</bdi> باليورو (<bdi>EUR</bdi>)</strong> وتقليص حالات عدم الحضور.
+              </p>
+            </div>
+          </label>
+        </div>
+
+        <!-- Bottom Action Sign-off Bar -->
+        <div class="panel" style="background:rgba(255,255,255,0.09);border-color:rgba(255,255,255,0.2);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;margin-top:auto;">
+          <div>
+            <strong style="font-size:0.95rem;color:#FFD199;display:block;">🌊 جاهزون للتنفيذ الفوري بقيادة فريق الذكاء الاصطناعي (<bdi>Ayman · Hossam · Lara</bdi>)</strong>
+            <span style="font-size:0.8rem;color:#D9EFF8;">الموقع الرسمي: <bdi>https://seacollegediveclub.com</bdi> · واتساب المركز: <bdi>+20 111 456 7886</bdi></span>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:0.6rem;" class="no-print">
+            <a href="./Sea-College-Executive-Report-Nov2026.pptx" download class="action-btn action-btn--pptx">
+              ⬇️ تحميل العرض التقديمي الكامل (.PPTX)
+            </a>
+            <button type="button" class="action-btn action-btn--wa" onclick="sendDecisionsWhatsApp()">
+              ✅ إرسال اعتماد القرارات المحددة عبر واتساب
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide__foot">
+        <span>ختام التقرير التنفيذي الشامل — <bdi>Sea College Dive Club · Sharm El Sheikh</bdi></span>
+        <span>الشريحة <bdi>14</bdi> من <bdi>14</bdi></span>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
